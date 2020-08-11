@@ -4,23 +4,23 @@
 
 ## 标题
 
-- # \# 一级标题
-- ## \## 二级标题
-- ### \### 三级标题
-- #### \#### 四级标题
-- ##### \##### 五级标题
-- ###### \###### 六级标题
+> # \# 一级标题
+> ## \## 二级标题
+> ### \### 三级标题
+> #### \#### 四级标题
+> ##### \##### 五级标题
+> ###### \###### 六级标题
 
 ---
 
 ## 字体
 
-- \*_斜体_\*
-- \__斜体文本_\_
-- \*\***粗体文本**\*\*
-- \_\_**粗体文本**\_\_
-- \*\*\***_粗斜体文本_**\*\*\*
-- \_\_\_**_粗斜体文本_**\_\_\
+> \*_斜体_\*  
+> \__斜体文本_\_  
+> \*\***粗体文本**\*\*  
+> \_\_**粗体文本**\_\_  
+> \*\*\***_粗斜体文本_**\*\*\*  
+> \_\_\_**_粗斜体文本_**\_\_\  
 
 ---
 
@@ -91,8 +91,8 @@
 ### 区块列表
 
 - 列表项
-- > 列表中区块
-- > 列表中区块
+- > 列表中区块  
+  > 列表中区块
 - 列表项
 
 ---
@@ -120,15 +120,15 @@ const numObject = {
 或  
 \<链接地址\>
 
-- [github 主页](https://github.com)
-- 我也是链接地址 <https://github.com>
+> [github 主页](https://github.com)  
+> 我也是链接地址 <https://github.com>
 
 ### 高级链接
 
-使用 google 作为网址变量 [ Google ][ google ]  
- [ google ]: https://google.com
+> [谷歌][google]  
 
-- 但是不知道为什么这里不起作用...可能是编辑器的问题？暂时先这样吧。
+*emmmmmm,高级链接貌似有一点格式要求？中间必须要空出一行？~~至少在我这里是这样...~~*
+> [google]: https:google.com
 
 ---
 
@@ -137,14 +137,17 @@ const numObject = {
 图片链接格式如下：  
 \!\[alt 属性文本\]\(本地或网络都可以\)
 
-- 本地
-- ![alt akariIcon](akari-1400.png)
-- 网络
-- ![alt googleIcon](https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png)
+> 本地
+>
+> > ![alt akariIcon](akari-1400.png)
+
+> 网络
+>
+> > ![alt googleIcon](https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png)
 
 或者使用 html 的\<img\/\>标签也可以，好处是可以指定图片大小。
 
-- <img src="akari-1400.png" alt="akariIcon" height="100px" width="100px">
+> <img src="akari-1400.png" alt="akariIcon" height="100px" width="100px">
 
 ---
 
@@ -164,7 +167,7 @@ const numObject = {
 
 ## Markdown 支持的 HTML 元素
 
-- \<kbd> \<b> \<i> \<em> \<sup> \<sub> \<br>等
+\<kbd> \<b> \<i> \<em> \<sup> \<sub> \<br>等
 
 ---
 
