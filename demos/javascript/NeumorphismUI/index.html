@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./softUIStyle.css">
-    <title>Document</title>
-  </head>
 
-  <body>
-    <div class="logWrap">
-      <div class="headline">
-        <h1>Welcome</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/neumorphism.css">
+  <link type="text/css" href="./vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body>
+  <nav id="neu-navbar-main" class="navbar">
+    <div class="container position-relative">
+      <div class="navbar-collapse collapse" id="navbar_global">
+
       </div>
-      <div class="inputGroup">
-        <div class="inputItem">
-          <input type="text" placeholder="account" class="inputItemInnerInput">
-        </div>
-        <div class="inputItem">
-          <input type="password" placeholder="password" class="inputItemInnerInput">
-        </div>
-        <div class="logButton">
-          <button class="logButtonButton">登录</button>
-        </div>
-        <div class="buttonGroup">
-          <button class="buttonItem">a</button>
-          <button class="buttonItem">b</button>
-          <button class="buttonItem">c</button>
-        </div>
-        <div class="segment">
-          <div class="inputItem">
-            <input type="text" placeholder="search">
-          </div>
-          <button class="buttonItem">d</button>
-        </div>
-      </div>
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link">
+            <span class="nav-link-inner-text">Pages</span>
+            <img src="./img/array.svg" alt="nav arrow">
+          </a>
+          <ul class="dropdown-menu shadow-out-md">
+            <li><a href="#" class="dropdown-item">About</a></li>
+            <li><a href="#" class="dropdown-item">Pricing</a></li>
+            <li><a href="#" class="dropdown-item">Contact</a></li>
+            <li><a href="#" class="dropdown-item">Sign in</a></li>
+            <li><a href="#" class="dropdown-item">Sign up</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link">
+            <span class="nav-link-inner-text">Components</span>
+            <img src="./img/array.svg" alt="nav arrow">
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link">
+            <span class="nav-link-inner-text">Support</span>
+            <img src="./img/array.svg" alt="nav arrow">
+          </a>
+        </li>
+      </ul>
     </div>
-    <!-- 整个的大盒子 -->
-    <div class="container">
-      <!-- 每个图标的小盒子 -->
-      <div class="box">
-        <div class="img">
-          <img src="./search.png" alt="searchIcon" />
-        </div>
-        <p>搜索</p>
-      </div>
-    </div>
-  </body>
+  </nav>
+</body>
+
 </html>
