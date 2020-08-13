@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/neumorphism.css">
-  <link type="text/css" href="./vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/carousel.css">
   <title>Document</title>
 </head>
 
@@ -63,6 +63,47 @@
       </ul>
     </div>
   </nav>
+  <!-- <div class="container">
+    <div id="Carousel2" class="carousel slide">
+      <div class="carousel-item active">
+        <img src="./img/carousel/image-1.jpg" alt="First slide" class="d-block-100">
+      </div>
+      <div class="carousel-item">
+        <img src="./img/carousel/image-2.jpg" alt="Second slid" class="d-block-100">
+      </div>
+      <div class="carousel-item">
+        <img src="./img/carousel/image-3.jpg" alt="Third slid" class="d-block-100">
+      </div>
+      <a href="#Carousel2" class="carousel-control-prev" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a href="#Carousel2" class="carousel-control-next" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div> -->
+
+  <div id="container">
+    <ul id="banner">
+      <li><a href="#"><img src="./img/carousel/image-3.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/carousel/image-1.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/carousel/image-2.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/carousel/image-3.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/carousel/image-1.jpg" alt=""></a></li>
+    </ul>
+
+    <!-- 伴随移动的小圆点 -->
+    <div id="buttons">
+      <span class="on" index="1"></span>
+      <span index="2"></span>
+      <span index="3"></span>
+      <span index="4"></span>
+      <span index="5"></span>
+    </div>
+    <a href="javascript:;" class="arrow" id="prev"></a>
+    <a href="javascript:;" class="arrow" id="next"></a>
+  </div>
+  <script src="./script/carousel.js"></script>
 </body>
 
 </html>
