@@ -19,9 +19,11 @@ function Carousel({ imgList, dwellTime = 1000, autoTimeout = 1000, loop = true }
 
   this.moveWidth = this.container.offsetWidth;
   this.timer = loop ? setInterval(() => {
-    this.swipeImage(this.carouselList, LEFT, _this.autoTimeout)
+    this.swipeImage(this.carouselList, LEFT, autoTimeout,)
   }, this.autoTimeout + this.dwellTime) : null
   this.startTime = Date.now()
+
+  this.loop = loop
 
 }
 
@@ -53,6 +55,11 @@ Carousel.prototype = {
     this.addEvent()
 
 
+  },
+  setTimer() {
+    this.timer = this.loop ? setInterval(() => {
+      this.swipeImage(this.carouselList, LEFT, this.autoTimeout,)
+    }, this.autoTimeout + this.dwellTime) : null
   },
   initDom() {
     // 添加图片列表
@@ -126,17 +133,13 @@ Carousel.prototype = {
       clearInterval(_this.timer)
     })
     this.next.addEventListener('mouseout', () => {
-      _this.timer = _this.loop ? setInterval(() => {
-        _this.swipeImage(_this.carouselList, LEFT, _this.autoTimeout)
-      }, _this.autoTimeout + _this.dwellTime) : null
+      _this.setTimer()
     })
     this.prev.addEventListener('mouseover', function () {
       clearInterval(_this.timer)
     })
     this.prev.addEventListener('mouseout', () => {
-      _this.timer = _this.loop ? setInterval(() => {
-        _this.swipeImage(_this.carouselList, LEFT)
-      }, _this.autoTimeout + _this.dwellTime) : null
+      _this.setTimer()
     })
     this.prev.addEventListener('click', function () {
       _this.throttle(_this.swipeImage, 300)(_this.carouselList, RIGHT, 300)
@@ -157,9 +160,7 @@ Carousel.prototype = {
         clearInterval(_this.timer)
       })
       dotList[i].addEventListener('mouseout', () => {
-        _this.timer = _this.loop ? setInterval(() => {
-          _this.swipeImage(_this.carouselList, LEFT, _this.autoTimeout)
-        }, _this.autoTimeout + _this.dwellTime) : null
+        _this.setTimer()
       })
     }
   },

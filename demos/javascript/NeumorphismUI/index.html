@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <link rel="stylesheet" href="./css/neumorphism.css"> -->
   <link rel="stylesheet" href="./css/carousel.css">
+  <link rel="stylesheet" href="./css/neumorphism.css">
   <title>Document</title>
 </head>
 
 <body>
-  <!-- <nav id="neu-navbar-main" class="navbar">
+  <nav id="neu-navbar-main" class="navbar">
     <div class="container position-relative">
       <div class="navbar-collapse collapse" id="navbar_global">
 
@@ -81,7 +81,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
       </a>
     </div>
-  </div> -->
+  </div>
 
   <!-- 容器 -->
   <div class="carousel-container">
@@ -113,7 +113,7 @@
     new Carousel({
       imgList: imgList,
       autoTimeout: 1000,
-      loop: false
+      loop: true
     }).init();
     console.timeEnd();
   </script>
