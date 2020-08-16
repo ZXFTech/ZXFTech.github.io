@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/neumorphism.css">
+  <!-- <link rel="stylesheet" href="./css/neumorphism.css"> -->
   <link rel="stylesheet" href="./css/carousel.css">
   <title>Document</title>
 </head>
 
 <body>
-  <nav id="neu-navbar-main" class="navbar">
+  <!-- <nav id="neu-navbar-main" class="navbar">
     <div class="container position-relative">
       <div class="navbar-collapse collapse" id="navbar_global">
 
@@ -62,7 +62,7 @@
         </li>
       </ul>
     </div>
-  </nav>
+  </nav> -->
   <!-- <div class="container">
     <div id="Carousel2" class="carousel slide">
       <div class="carousel-item active">
@@ -83,27 +83,40 @@
     </div>
   </div> -->
 
-  <div id="container">
-    <ul id="banner">
-      <li><a href="#"><img src="./img/carousel/image-3.jpg" alt=""></a></li>
-      <li><a href="#"><img src="./img/carousel/image-1.jpg" alt=""></a></li>
-      <li><a href="#"><img src="./img/carousel/image-2.jpg" alt=""></a></li>
-      <li><a href="#"><img src="./img/carousel/image-3.jpg" alt=""></a></li>
-      <li><a href="#"><img src="./img/carousel/image-1.jpg" alt=""></a></li>
-    </ul>
-
-    <!-- 伴随移动的小圆点 -->
-    <div id="buttons">
-      <span class="on" index="1"></span>
-      <span index="2"></span>
-      <span index="3"></span>
-      <span index="4"></span>
-      <span index="5"></span>
-    </div>
-    <a href="javascript:;" class="arrow" id="prev"></a>
-    <a href="javascript:;" class="arrow" id="next"></a>
+  <!-- 容器 -->
+  <div class="carousel-container">
   </div>
   <script src="./script/carousel.js"></script>
+  <script>
+    console.time()
+    let imgList = [{
+        url: '#',
+        imgPath: './img/carousel/i.jpg'
+      },
+      {
+        url: '#',
+        imgPath: './img/carousel/o.jpg'
+      },
+      {
+        url: '#',
+        imgPath: './img/carousel/q.jpeg'
+      },
+      {
+        url: '#',
+        imgPath: './img/carousel/w.jpg'
+      },
+      {
+        url: '#',
+        imgPath: './img/carousel/z.png'
+      }
+    ]
+    new Carousel({
+      imgList: imgList,
+      autoTimeout: 1000,
+      loop: false
+    }).init();
+    console.timeEnd();
+  </script>
 </body>
 
 </html>

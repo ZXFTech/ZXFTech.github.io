@@ -1,84 +1,77 @@
-#banner,
-#banner li{
-    list-style: none;
-    margin: 0;
-    padding: 0;
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-#banner{
-    position: absolute;
+img {
+  width: 100%;
+  display: block;
 }
 
-#banner li{
-    float: left;
+.carousel-container {
+  width: 480px;
+  height: 270px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
 }
 
-#banner li img{
-    display: block;
-    width: 300px;
-    height: 300px;
+.carousel-img-list {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-
-/*设置父元素定位*/
-#container{
-    position: relative; /*为了给左右按钮 和小圆点*/
-    overflow: hidden;
-    height: 300px;
-    width: 300px;
+.carousel-img-list > .list-item {
+  height: 100%;
+  display: inline;
+  position: absolute;
 }
 
-
-/*小圆点*/
-#buttons{
-    position: absolute; /*小圆点绝对定位*/
-    height: 10px;
-    width: 100px;
-    bottom: 20px;  /*距离底部20px*/
-    left: 50%;  /*左右居中显示*/
-    z-index: 100;
+.carousel-dot-list {
+  width: 100%;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
 }
 
-#buttons span{
-    cursor: pointer;
-    float: left;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%; /*设置成圆*/
-    background: #333;
-    margin-right: 5px;
+.carousel-dot-list > .dot-list-item {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-left: 10px;
 }
 
-#buttons .on{
-    background: orangered;
+.carousel-dot-list > .dot-list-item :nth-of-type(1) {
+  margin-left: 0;
 }
 
-/*左右按钮*/
-.arrow{
-    cursor: pointer;
-    display: none;  /*设置暂时不显示*/
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    z-index: 200;
-    top: 180px;
-    background: RGBA(0,0,0,.3);  /*背景透明度*/
-    color: #fff;
+.carousel-dot-list > .dot-list-item:hover {
+  background: #ff440094;
 }
 
-#prev{
-    left: 20px;
+.carousel-dot-list > .active {
+  background: #ff4500 !important;
 }
 
-#next{
-    right: 20px;
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
 }
 
- #container:hover .arrow {
-     display: block;
- }
+.carousel-prev {
+  left: 15px;
+}
+
+.carousel-next {
+  right: 15px;
+}
