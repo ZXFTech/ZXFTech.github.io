@@ -4,88 +4,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/carousel.css">
-  <link rel="stylesheet" href="./css/neumorphism.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/theme.css">
   <title>Document</title>
 </head>
 
 <body>
-  <nav id="neu-navbar-main" class="navbar">
-    <div class="container position-relative">
-      <div class="navbar-collapse collapse" id="navbar_global">
+  <nav id="navbar_main" class="navbar_main">
+    <ul class="navbar_nav-list">
+      <li class="navbar_nav-list_item">
+        <a href="#" class="navbar_nav_link">
+          <span class="navbar_link_inner-text">Pages</span>
+          <img src="./img/array.svg" alt="nav arrow">
+        </a>
+        <ul class="navbar_sub-nav-list">
+          <li class="navbar_sub-nav-list_item"><a href="#">About</a></li>
+          <li class="navbar_sub-nav-list_item"><a href="#">Pricing</a></li>
+          <li class="navbar_sub-nav-list_item"><a href="#">
+              <span>Contact</span>
+              <img src="./img/array.svg" alt="nav arrow">
+            </a>
+          </li>
+          <li class="navbar_sub-nav-list_item"><a href="#">
+              <span>Sign in</span>
+              <img src="./img/array.svg" alt="nav arrow">
+            </a>
+            <ul class="navbar_secondary-nav-list">
+              <li class="navbar_secondary-nav-list_item"><a href="#">content</a></li>
+              <li class="navbar_secondary-nav-list_item"><a href="#">content</a></li>
+              <li class="navbar_secondary-nav-list_item"><a href="#">content</a></li>
+              <li class="navbar_secondary-nav-list_item"><a href="#">content</a></li>
+              <li class="navbar_secondary-nav-list_item"><a href="#">content</a></li>
+              <li class="navbar_secondary-nav-list_item"><a href="#">content</a></li>
+              <li class="navbar_secondary-nav-list_item"><a href="#">content</a></li>
+              <li class="navbar_secondary-nav-list_item"><a href="#">content</a></li>
+            </ul>
+          </li>
+          <li class="navbar_sub-nav-list_item"><a href="#">Sign up</a></li>
+        </ul>
+      </li>
+      <li class="navbar_nav-list_item">
+        <a href="#" class="navbar_nav_link">
+          <span class="navbar_link_inner-text">Components</span>
+          <img src="./img/array.svg" alt="nav arrow">
+        </a>
+      </li>
+      <li class="navbar_nav-list_item">
+        <a href="#" class="navbar_nav_link">
+          <span class="navbar_link_inner-text">Support</span>
+          <img src="./img/array.svg" alt="nav arrow">
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-      </div>
-      <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link">
-            Pages
-            <img src="./img/array.svg" alt="nav arrow">
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="#" class="dropdown-item">About</a></li>
-            <li><a href="#" class="dropdown-item">Pricing</a></li>
-            <li><a href="#" class="dropdown-item">
-                <span>Contact</span>
-                <img src="./img/array.svg" alt="nav arrow">
-              </a>
-            </li>
-            <li><a href="#" class="dropdown-item">
-                <span>Sign in</span>
-                <img src="./img/array.svg" alt="nav arrow">
-              </a>
-              <ul class="sub-dropdown-menu">
-                <li><a href="#" class="sub-dropdown-item">content
-                  </a></li>
-                <li><a href="#" class="sub-dropdown-item">content</a></li>
-                <li><a href="#" class="sub-dropdown-item">content</a></li>
-                <li><a href="#" class="sub-dropdown-item">content</a></li>
-                <li><a href="#" class="sub-dropdown-item">content</a></li>
-                <li><a href="#" class="sub-dropdown-item">content</a></li>
-                <li><a href="#" class="sub-dropdown-item">content</a></li>
-                <li><a href="#" class="sub-dropdown-item">content</a></li>
-              </ul>
-            </li>
-            <li><a href="#" class="dropdown-item">Sign up</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link">
-            <span class="nav-link-inner-text">Components</span>
-            <img src="./img/array.svg" alt="nav arrow">
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link">
-            <span class="nav-link-inner-text">Support</span>
-            <img src="./img/array.svg" alt="nav arrow">
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav> -->
-  <!-- <div class="container">
-    <div id="Carousel2" class="carousel slide">
-      <div class="carousel-item active">
-        <img src="./img/carousel/image-1.jpg" alt="First slide" class="d-block-100">
-      </div>
-      <div class="carousel-item">
-        <img src="./img/carousel/image-2.jpg" alt="Second slid" class="d-block-100">
-      </div>
-      <div class="carousel-item">
-        <img src="./img/carousel/image-3.jpg" alt="Third slid" class="d-block-100">
-      </div>
-      <a href="#Carousel2" class="carousel-control-prev" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </a>
-      <a href="#Carousel2" class="carousel-control-next" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      </a>
-    </div>
-  </div>
-
-  <!-- 容器 -->
-  <div class="carousel-container">
-  </div>
+  <div class="carousel_main"></div>
   <script src="./script/carousel.js"></script>
   <script>
     console.time()

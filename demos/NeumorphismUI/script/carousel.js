@@ -15,7 +15,7 @@ function Carousel({ imgList, dwellTime = 1000, autoTimeout = 1000, loop = true }
   this.dwellTime = dwellTime
   this.currentIndex = 0;
 
-  this.container = document.getElementsByClassName('carousel-container')[0]
+  this.container = document.getElementsByClassName('carousel_main')[0]
 
   this.moveWidth = this.container.offsetWidth;
   this.timer = loop ? setInterval(() => {
@@ -34,7 +34,7 @@ Carousel.prototype = {
     // 添加轮播图图片
     let li = '';
     for (let i = 0; i < this.fullImgList.length; i++) {
-      li += `<li style="left: ${i * this.moveWidth}px;width: ${this.moveWidth}px" class="list-item"><a href="${this.fullImgList[i].url}"><img src="${this.fullImgList[i].imgPath}" alt="carousel image"></a></li>`;
+      li += `<li style="left: ${i * this.moveWidth}px;width: ${this.moveWidth}px" class="carousel_img-list_item"><a href="${this.fullImgList[i].url}"><img src="${this.fullImgList[i].imgPath}" alt="carousel image"></a></li>`;
     }
     // li += `<div style="clear:both;"></div>`
     this.carouselList.innerHTML = li;
@@ -44,9 +44,9 @@ Carousel.prototype = {
     let dotLi = ''
     for (let i = 0; i < this.imgList.length; i++) {
       if (i === this.currentIndex) {
-        dotLi += `<li class="dot-list-item active" data-index=${i}></li>`;
+        dotLi += `<li class="carousel_dot-list_item active" data-index=${i}></li>`;
       } else {
-        dotLi += `<li class="dot-list-item" data-index=${i}></li>`;
+        dotLi += `<li class="carousel_dot-list_item" data-index=${i}></li>`;
       }
     }
     this.carouselDotList.innerHTML = dotLi
@@ -64,7 +64,7 @@ Carousel.prototype = {
   initDom() {
     // 添加图片列表
     this.carouselList = document.createElement('ul')
-    this.carouselList.className = 'carousel-img-list'
+    this.carouselList.className = 'carousel_img-list'
     this.carouselList.style.width = `${this.moveWidth * (imgList.length + 2)}px`
     this.carouselList.style.left = `-${this.moveWidth}px`
     this.container.appendChild(this.carouselList)
@@ -72,13 +72,13 @@ Carousel.prototype = {
     // 按钮
     // 左右切换按钮
     this.prev = document.createElement('img')
-    this.prev.className = 'carousel-prev'
+    this.prev.className = 'carousel_prev-btn'
     this.prev.src = './img/carousel/left.png'
     this.container.appendChild(this.prev)
 
     // 下一张按钮
     this.next = document.createElement('img')
-    this.next.className = 'carousel-next'
+    this.next.className = 'carousel_next-btn'
     this.next.src = './img/carousel/right.png'
     if (this.imgList.length === 1) {
       this.prev.style.display = 'none'
@@ -88,12 +88,11 @@ Carousel.prototype = {
 
     // 圆点按钮列表
     this.carouselDotList = document.createElement('ul')
-    this.carouselDotList.className = 'carousel-dot-list'
+    this.carouselDotList.className = 'carousel_dot-list'
     this.container.appendChild(this.carouselDotList)
 
   },
   transform(element, index, animation, autoTimeout, width) {
-    console.log(autoTimeout)
     if (width === undefined) {
       width = this.moveWidth
     }
@@ -148,7 +147,7 @@ Carousel.prototype = {
     this.next.addEventListener('click', function () {
       _this.throttle(_this.swipeImage, 300)(_this.carouselList, LEFT, 300)
     })
-    const dotList = document.getElementsByClassName('dot-list-item')
+    const dotList = document.getElementsByClassName('carousel_dot-list_item')
     for (let i = 0; i < dotList.length; i++) {
       dotList[i].addEventListener('click', () => {
         console.log(dotList[i].getAttribute('data-index'));
@@ -165,13 +164,13 @@ Carousel.prototype = {
     }
   },
   updateDotList() {
-    const dotList = document.getElementsByClassName('dot-list-item')
+    const dotList = document.getElementsByClassName('carousel_dot-list_item')
     for (let i = 0; i < dotList.length; i++) {
       if (i == this.currentIndex) {
-        dotList[i].className = 'dot-list-item active'
+        dotList[i].className = 'carousel_dot-list_item active'
       }
       else {
-        dotList[i].className = 'dot-list-item'
+        dotList[i].className = 'carousel_dot-list_item'
       }
     }
   },
