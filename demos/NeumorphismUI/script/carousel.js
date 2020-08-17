@@ -11,23 +11,25 @@ const RIGHT = false
 function Carousel({ imgList, dwellTime = 1000, autoTimeout = 1000, loop = true }) {
   this.imgList = Array.isArray(imgList) ? imgList : []
   this.fullImgList = [this.imgList[this.imgList.length - 1], ...this.imgList, this.imgList[0]]
-  this.autoTimeout = autoTimeout
-  this.dwellTime = dwellTime
+  this.autoTimeout = autoTimeout  // 自动切换动画时间
+  this.dwellTime = dwellTime // 图片驻留显示时间
   this.currentIndex = 0;
 
   this.container = document.getElementsByClassName('carousel_container')[0]
 
-  this.moveWidth = this.container.offsetWidth;
+  this.moveWidth = this.container.offsetWidth; // 单次步长
+  // 定时器
   this.timer = loop ? setInterval(() => {
     this.swipeImage(this.carouselList, LEFT, autoTimeout,)
   }, this.autoTimeout + this.dwellTime) : null
   this.startTime = Date.now()
 
-  this.loop = loop
+  this.loop = loop  // 是否自动循环
 
 }
 
 Carousel.prototype = {
+  // 初始化 添加图片，圆点按钮样式，绑定事件
   init: function () {
     this.initDom();
 
@@ -53,14 +55,8 @@ Carousel.prototype = {
 
     // 上一张 下一张 小圆点绑定点击事件
     this.addEvent()
-
-
   },
-  setTimer() {
-    this.timer = this.loop ? setInterval(() => {
-      this.swipeImage(this.carouselList, LEFT, this.autoTimeout,)
-    }, this.autoTimeout + this.dwellTime) : null
-  },
+  // 初始化dom 给容器中添加图片数组，上一张下一张按钮和圆点按钮数组
   initDom() {
     // 添加图片列表
     this.carouselList = document.createElement('ul')
@@ -92,6 +88,13 @@ Carousel.prototype = {
     this.container.appendChild(this.carouselDotList)
 
   },
+  // 设置 自动循环的 timer
+  setTimer() {
+    this.timer = this.loop ? setInterval(() => {
+      this.swipeImage(this.carouselList, LEFT, this.autoTimeout,)
+    }, this.autoTimeout + this.dwellTime) : null
+  },
+  // 核心方法之一 通过传入相关参数移动指定元素（本例中是图片列表）
   transform(element, index, animation, autoTimeout, width) {
     if (width === undefined) {
       width = this.moveWidth
@@ -101,6 +104,7 @@ Carousel.prototype = {
     element.style.transition = animation ? `left ${autoTimeout}ms` : 'none'
     element.style.left = `-${move}px`
   },
+  // 和新方法之二 指定方向，及队头队尾情况判定
   swipeImage(element, direction, autoTimeout = 1000, animation = true, width) {
     console.log(autoTimeout);
     let _this = this
@@ -126,6 +130,7 @@ Carousel.prototype = {
     }
     _this.updateDotList()
   },
+  // 给元素绑定对应时间
   addEvent() {
     let _this = this
     this.next.addEventListener('mouseover', function () {
@@ -163,6 +168,7 @@ Carousel.prototype = {
       })
     }
   },
+  // 用于更新圆点按钮样式
   updateDotList() {
     const dotList = document.getElementsByClassName('carousel_dot-list_item')
     for (let i = 0; i < dotList.length; i++) {
@@ -174,6 +180,7 @@ Carousel.prototype = {
       }
     }
   },
+  // 节流函数 —— 时间戳版
   throttle(callback, delay) {
     const _this = this
     let current = Date.now()
