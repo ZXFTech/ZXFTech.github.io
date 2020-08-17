@@ -15,7 +15,7 @@ function Carousel({ imgList, dwellTime = 1000, autoTimeout = 1000, loop = true }
   this.dwellTime = dwellTime
   this.currentIndex = 0;
 
-  this.container = document.getElementsByClassName('carousel_main')[0]
+  this.container = document.getElementsByClassName('carousel_container')[0]
 
   this.moveWidth = this.container.offsetWidth;
   this.timer = loop ? setInterval(() => {
