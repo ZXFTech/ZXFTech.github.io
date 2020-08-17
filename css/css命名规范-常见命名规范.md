@@ -1,4 +1,4 @@
-# CSS 命名规范
+# CSS 命名规范 - 常见命名规范
 
 每次写 css 样式，类名都命名的比较随意，有时候复用从自己别的地方的 css 样式，光改名字就要改一阵子。不统一规范的类名不利于样式复用，看起来很杂乱，也不利于主题切换等统一修改样式的情形。所以想试着了解一下常用的 css 命名规范并构建一套自己的 css 命名规范。
 
@@ -41,6 +41,7 @@
 > > .form__submit { }
 > > .form__submit--disabled { }
 > > ```
+>  在[BEM官网命名部分](http://getbem.com/naming/)介绍的要更详细，就不在多做说明了。~~反正基本都是复制的，重点是要理解他的思想~~
 
 ### [Aliceui](https://github.com/aliceui/aliceui.github.io/)
 
