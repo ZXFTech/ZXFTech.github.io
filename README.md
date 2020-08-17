@@ -22,10 +22,10 @@ _迁移中..._
 
 > [javascript](demos/javascript/index.html)
 >
-> > [新拟态组件](demos/javascript/NeumorphismUI/index.html)
+> > [新拟态组件](demos/NeumorphismUI/index.html)
 > >
 > > > 新拟态风格的各种组件
 > >
-> > [新拟态风格计算器](demos/javascript/SoftUICalculator/index.html)
+> > [新拟态风格计算器](demos/SoftUICalculator/index.html)
 > >
 > > > 使用 vue.js 写的一个简单的新拟态风格的计算器

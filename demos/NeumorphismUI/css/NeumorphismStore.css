@@ -1,0 +1,151 @@
+
+/* #region 导航栏 navbar 标准新拟态 */
+.navbar_main {
+  /*	布局	*/
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 20rem;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 1rem;
+  /*  样式  */
+  box-shadow: var(--shadow-out-md);
+}
+
+.navbar_main a {
+  color: var(--link-color);
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.navbar_nav-list {
+  /*	布局	*/
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar_nav-list_item {
+  /*	布局	*/
+  position: relative;
+  margin-right: 10px;
+  padding: 0 35px;
+  border-radius: 10px;
+  border: var(--border);
+}
+
+.navbar_nav_link {
+  position: relative;
+  line-height: 2.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.navbar_nav_link img {
+  display: inline;
+  max-height: 10px;
+  max-width: 10px;
+  transition: all 0.3s ease;
+}
+
+.navbar_nav-list_item:hover {
+  box-shadow: inset 1px 1px 0 1px rgba(0, 0, 0, .3);
+}
+
+.navbar_nav-list_item:hover .navbar_nav_link img {
+  transform: rotate(180deg);
+}
+
+.navbar_nav-list_item:hover .navbar_sub-nav-list {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+
+.navbar_sub-nav-list {
+  display: none;
+  list-style: none;
+  margin: 0;
+  width: 100px;
+  padding: 10px 0;
+  border: var(--border);
+  border-radius: 10px;
+  background-color: var(--bg-color);
+  /* box-shadow: var(--shadow-out-md); */
+  z-index: 99;
+}
+
+.navbar_sub-nav-list_item {
+  position: relative;
+}
+
+.navbar_sub-nav-list_item {
+  line-height: 2rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  display: block;
+  padding: 5px 20px;
+  padding-right: 0;
+}
+
+.navbar_sub-nav-list_item a span {
+  display: inline-block;
+  width: 60px;
+}
+
+.navbar_sub-nav-list_item a img {
+  display: inline;
+  max-height: 10px;
+  max-width: 10px;
+  transition: all 0.3s ease;
+}
+
+.navbar_secondary-nav-list {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: var(--bg-color);
+  box-shadow: var(--shadow-out-md);
+  border-radius: 10px;
+  border: 0.0625rem solid #d1d9e6;
+  z-index: 98;
+
+  display: none;
+}
+
+.navbar_secondary-nav-list_item {
+  display: inline-block;
+  padding: 5px 20px;
+}
+
+.navbar_sub-nav-list_item:hover {
+  box-shadow: var(--shadow-in-sm);
+}
+
+.navbar_secondary-nav-list_item:hover {
+  box-shadow: var(--shadow-in-sm);
+}
+
+.navbar_sub-nav-list_item:hover img {
+  transform: rotate(-90deg);
+}
+
+.navbar_sub-nav-list_item:hover .navbar_secondary-nav-list {
+  display: flex;
+}
+/* #endregion */
+
