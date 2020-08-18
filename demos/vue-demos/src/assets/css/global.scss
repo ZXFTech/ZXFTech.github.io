@@ -1,0 +1,113 @@
+/*	#region	全局	*/
+@import url("https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap");
+
+// *,
+// *::before,
+// *::after {
+//   box-sizing: content-box;
+// }
+
+html {
+  width: 100vw;
+  height: 100vh;
+  line-height: 1.5;
+  font-weight: 300;
+  font-family: "ZCOOL KuaiLe", cursive;
+  color: var(--font-color);
+  text-align: left;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  background-color: var(--bg-main-color);
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  outline: none;
+}
+/*	#endregion	*/
+
+/*	#region	主题通用部分	*/
+.navbar_nav-list {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  padding-bottom: 0;
+  padding: 1rem;
+
+  font-size: 1.5rem;
+
+  box-shadow: var(--shadow-out-md);
+  border-radius: 1rem;
+  border: var(--border);
+}
+
+.navbar_sub-nav-list,
+.navbar_secondary-nav-list {
+  font-size: 1.2rem;
+}
+
+.navbar_sub-nav-list,
+.navbar_secondary-nav-list {
+  display: none;
+  box-shadow: var(--shadow-in-md);
+  border-radius: 1rem;
+  border: var(--border);
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
+.navbar_nav_link {
+  margin-bottom: 0.5rem;
+  border-radius: 1rem;
+}
+
+.navbar_nav_link {
+  display: block;
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.navbar_nav_link img {
+  position: absolute;
+  right: 1rem;
+  top: 1.2rem;
+  max-width: 1rem;
+  transform: rotate(180deg);
+  transition: 0.618s ease;
+}
+
+.active > .navbar_sub-nav-list,
+.active > .navbar_secondary-nav-list {
+  display: block;
+}
+
+.active > .navbar_nav_link {
+  box-shadow: var(--shadow-in-md);
+}
+
+.active > .navbar_nav_link img {
+  transform: rotate(0deg);
+}
+
+/*	#endregion	*/
+
+/*	#region	标题栏 title-bar 凹槽新拟态	*/
+.title-bar {
+  position: relative;
+}
+/*	#endregion	*/

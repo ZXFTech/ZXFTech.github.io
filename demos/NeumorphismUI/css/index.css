@@ -1,3 +1,4 @@
+/*	#region	全局	*/
 *,
 *::before,
 *::after {
@@ -21,7 +22,9 @@ body {
   text-align: left;
   background-color: var(--bg-main-color);
 }
+/*	#endregion	*/
 
+/*	#region	主题通用部分	*/
 .navbar_nav-list,
 .navbar_sub-nav-list,
 .navbar_secondary-nav-list,
@@ -51,6 +54,7 @@ body {
 .navbar_secondary-nav-list_item:hover {
   box-shadow: var(--shadow-out-sm);
 }
+/*	#endregion	*/
 
 /* #region 导航栏 navbar 凹槽新拟态 */
 .navbar_main {
@@ -197,7 +201,7 @@ img {
   width: 480px;
   height: 270px;
   margin: 0 auto;
-  padding:15px
+  padding: 15px;
 }
 
 .carousel_container {

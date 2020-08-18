@@ -1,0 +1,34 @@
+/* neumorphism */
+/* 拟态化风格 */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap");
+
+:root {
+  --bg-color: rgba(232, 233, 237, 1);
+  --bg-main-color: rgb(220, 221, 228);
+
+  --font-color:rgb(68, 71, 106);
+  --link-color:rgb(49, 52, 75);
+
+  --light-side-color: rgba(255, 255, 255, 1);
+  --dark-side-color: rgba(151, 151, 151, 0.8);
+  --border-color: rgb(209, 217, 230);
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  --shadow-in-sm: inset 2px 2px 4px var(--dark-side-color),
+    inset -2px -2px 4px var(--light-side-color);
+  --shadow-in-md: inset 4px 4px 8px var(--dark-side-color),
+    inset -4px -4px 8px var(--light-side-color);
+  --shadow-in-lg: inset 6px 6px 12px var(--dark-side-color),
+    inset -6px -6px 12px var(--light-side-color);
+  --shadow-out-sm: 2px 2px 4px var(--dark-side-color),
+    -2px -2px 4px var(--light-side-color);
+  --shadow-out-md: 4px 4px 8px var(--dark-side-color),
+    -4px -4px 8px var(--light-side-color);
+  --shadow-out-lg: 6px 6px 12px var(--dark-side-color),
+    -6px -6px 12px var(--light-side-color);
+  --border: 0.0625rem solid var(--border-color);
+}
