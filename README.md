@@ -6,13 +6,13 @@
 
 _迁移中..._
 
-## [各种组件实现](components)
+## 各种组件实现
 > [轮播图原理及实现](components/轮播图原理及实现.md)
 
-## [CSS](css)
+## CSS
 > [css命名规范-常见命名规范](css/css命名规范-常见命名规范.md)
 
-## [杂项][softskills]
+## 杂项
 
 > [Markdown 语法速查](softSkills/Markdown语法速查.md)
 
