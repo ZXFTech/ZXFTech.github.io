@@ -65,11 +65,6 @@ export default class Navbar extends Vue {
   }
 
   public setIndex(index: Array<number>): void {
-    console.log(this.currentIndex);
-    console.log(
-      this.currentIndex[this.navbarLevel] === index[this.navbarLevel]
-    );
-
     this.activeIndex = index;
     this.$forceUpdate();
   }

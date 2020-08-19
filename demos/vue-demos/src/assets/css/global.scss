@@ -41,6 +41,13 @@ a {
 /*	#endregion	*/
 
 /*	#region	主题通用部分	*/
+.navbar_humburger-btn,
+.navbar_nav-list {
+  box-shadow: var(--shadow-out-md);
+  border-radius: 1rem;
+  border: var(--border);
+}
+
 .navbar_nav-list {
   position: absolute;
   top: 1rem;
@@ -50,10 +57,6 @@ a {
   padding: 1rem;
 
   font-size: 1.5rem;
-
-  box-shadow: var(--shadow-out-md);
-  border-radius: 1rem;
-  border: var(--border);
 }
 
 .navbar_sub-nav-list,
@@ -69,6 +72,7 @@ a {
   border: var(--border);
   padding: 1rem;
   padding-bottom: 0;
+  margin-bottom:1rem;
 }
 
 .navbar_nav_link {
@@ -109,5 +113,15 @@ a {
 /*	#region	标题栏 title-bar 凹槽新拟态	*/
 .title-bar {
   position: relative;
+  height: 10rem;
+}
+
+.navbar_humburger-btn {
+  position: fixed;
+  right: 1rem;
+  top:1rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  outline: none;
 }
 /*	#endregion	*/

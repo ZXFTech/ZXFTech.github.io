@@ -1,4 +1,5 @@
 bubbleSort = (array) => {
+  if (!array.length) return
   let temp
   let stop = true
   for (let i = 0; i < array.length - 1; i++) {
@@ -18,6 +19,7 @@ bubbleSort = (array) => {
 }
 
 cocktailSort = (array) => {
+  if (!array.length) return
   let temp
   let startIndex = 0
   let endIndex = array.length - 1
@@ -43,16 +45,17 @@ cocktailSort = (array) => {
 }
 
 selectionSort = (array) => {
+  if (!array.length) return
   let min
   let temp
   for (let i = 0; i < array.length; i++) {
     min = i
-    for (let j = i+1; j < array.length; j++) {
-      if(array[j]<array[min]){
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] < array[min]) {
         min = j
       }
     }
-    if (min!=i) {
+    if (min != i) {
       temp = array[min]
       array[min] = array[i]
       array[i] = temp
@@ -61,17 +64,71 @@ selectionSort = (array) => {
   return array
 }
 
+insertionSort = (array) => {
+  if (!array.length) return
+  let key, j
+  for (let i = 1; i < array.length; i++) {
+    key = array[i]
+    j = i
+    while (j > 0 && array[j - 1] > key) {
+      array[j] = array[j - 1]
+      j--
+    }
+    array[j] = key
+  }
+  return array
+}
+
+insertionSortPro = (array) => {
+  if (!array.length) return
+  let key, j
+  for (let i = 1; i < array.length; i++) {
+    key = array[i];
+    j = 1
+    while (j < i && array[i - j] > key) {
+      array[i - j + 1] = array[i - j]
+      j++
+    }
+    array[i - j] = key
+  }
+  return array
+}
+
+binaryInsertionSort = array => {
+  if (!array.length) return
+  let key, lowIndex, heightIndex, m
+  for (let i = 1; i < array.length; i++) {
+    key = array[i];
+    lowIndex = 0
+    heightIndex = i - 1
+    while (lowIndex <= heightIndex) {
+      if (array[i] > array[m = (lowIndex + heightIndex) >> 1]) {
+        lowIndex = m + 1
+      } else {
+        heightIndex = m - 1
+      }
+    }
+    for (let j = i; j > lowIndex; j--) {
+      array[j] = array[j-1];
+    }
+    array[lowIndex] = key
+  }
+  return array
+}
+
 const sortArray1 = [3, 2, 6, 5, 1, 4, 9, 2, 5, 5, 3, 2, 7, 4, 5, 6, 7, 3, 5, 6, 5, 7, 1, 8]
 const sortArray2 = [1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
 console.log(sortArray1);
 console.time('sort1')
-const sorted1 = selectionSort(sortArray1)
-// sortArray1.cocktail_sort()
+const sorted1 = insertionSort(sortArray1)
 console.timeEnd('sort1')
 console.log(sorted1);
-console.log(sortArray2);
 console.time('sort2')
-const sorted2 = selectionSort(sortArray2)
-// const sorted2 = sortArray2.cocktail_sort()
+const sorted2 = binaryInsertionSort(sortArray1)
 console.timeEnd('sort2')
 console.log(sorted2);
+// console.log(sortArray2);
+// console.time('sort2')
+// const sorted2 = binaryInsertionSort(sortArray2)
+// console.timeEnd('sort2')
+// console.log(sorted2);
