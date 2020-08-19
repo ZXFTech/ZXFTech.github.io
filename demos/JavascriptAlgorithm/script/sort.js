@@ -42,38 +42,36 @@ cocktailSort = (array) => {
   return array
 }
 
-Array.prototype.cocktail_sort = function () {
-  var i, left = 0, right = this.length - 1;
-  var temp;
-  while (left < right) {
-    for (i = left; i < right; i++)
-      if (this[i] > this[i + 1]) {
-        temp = this[i];
-        this[i] = this[i + 1];
-        this[i + 1] = temp;
+selectionSort = (array) => {
+  let min
+  let temp
+  for (let i = 0; i < array.length; i++) {
+    min = i
+    for (let j = i+1; j < array.length; j++) {
+      if(array[j]<array[min]){
+        min = j
       }
-    right--;
-    for (i = right; i > left; i--)
-      if (this[i - 1] > this[i]) {
-        temp = this[i];
-        this[i] = this[i - 1];
-        this[i - 1] = temp;
-      }
-    left++;
+    }
+    if (min!=i) {
+      temp = array[min]
+      array[min] = array[i]
+      array[i] = temp
+    }
   }
-};
+  return array
+}
 
 const sortArray1 = [3, 2, 6, 5, 1, 4, 9, 2, 5, 5, 3, 2, 7, 4, 5, 6, 7, 3, 5, 6, 5, 7, 1, 8]
 const sortArray2 = [1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
 console.log(sortArray1);
 console.time('sort1')
-const sorted1 = cocktailSort(sortArray1)
+const sorted1 = selectionSort(sortArray1)
 // sortArray1.cocktail_sort()
 console.timeEnd('sort1')
 console.log(sorted1);
 console.log(sortArray2);
 console.time('sort2')
-const sorted2 = cocktailSort(sortArray2)
+const sorted2 = selectionSort(sortArray2)
 // const sorted2 = sortArray2.cocktail_sort()
 console.timeEnd('sort2')
 console.log(sorted2);
