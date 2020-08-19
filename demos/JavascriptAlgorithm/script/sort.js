@@ -79,21 +79,6 @@ insertionSort = (array) => {
   return array
 }
 
-insertionSortPro = (array) => {
-  if (!array.length) return
-  let key, j
-  for (let i = 1; i < array.length; i++) {
-    key = array[i];
-    j = 1
-    while (j < i && array[i - j] > key) {
-      array[i - j + 1] = array[i - j]
-      j++
-    }
-    array[i - j] = key
-  }
-  return array
-}
-
 binaryInsertionSort = array => {
   if (!array.length) return
   let key, lowIndex, heightIndex, m
