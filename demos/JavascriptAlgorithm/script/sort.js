@@ -94,26 +94,62 @@ binaryInsertionSort = array => {
       }
     }
     for (let j = i; j > lowIndex; j--) {
-      array[j] = array[j-1];
+      array[j] = array[j - 1];
     }
     array[lowIndex] = key
   }
   return array
 }
 
+mergeSort = array => {
+  if (array.length < 2) {
+    return array
+  }
+
+  const middle = array.length >> 1
+  const leftArray = array.slice(0, middle)
+  const rightArray = array.slice(middle)
+  return merge(mergeSort(leftArray), mergeSort(rightArray))
+}
+
+merge = (array1, array2) => {
+  let mergeArray = []
+
+  while (array1.length && array2.length) {
+    // debugger
+    if (array1[0] <= array2[0]) {
+      mergeArray.push(array1.shift())
+    } else {
+      mergeArray.push(array2.shift())
+    }
+
+    // console.log(mergeArray.length,'mergeArray');
+    // console.log(array1.length,'array1');
+
+    if (!array1.length) {
+      mergeArray = mergeArray.concat(array2)
+    }
+
+    if (!array2.length) {
+      mergeArray = mergeArray.concat(array1)
+    }
+  }
+  return mergeArray
+}
+
 const sortArray1 = [3, 2, 6, 5, 1, 4, 9, 2, 5, 5, 3, 2, 7, 4, 5, 6, 7, 3, 5, 6, 5, 7, 1, 8]
 const sortArray2 = [1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
 console.log(sortArray1);
 console.time('sort1')
-const sorted1 = insertionSort(sortArray1)
+const sorted1 = mergeSort(sortArray1)
 console.timeEnd('sort1')
 console.log(sorted1);
-console.time('sort2')
-const sorted2 = binaryInsertionSort(sortArray1)
-console.timeEnd('sort2')
-console.log(sorted2);
-// console.log(sortArray2);
-// console.time('sort2')
-// const sorted2 = binaryInsertionSort(sortArray2)
-// console.timeEnd('sort2')
+// console.time('sort1-2')
+// const sorted2 = mergeSort(sortArray2)
+// console.timeEnd('sort1-2')
 // console.log(sorted2);
+console.log(sortArray2);
+console.time('sort2')
+const sorted3 = binaryInsertionSort(sortArray2)
+console.timeEnd('sort2')
+console.log(sorted3);
