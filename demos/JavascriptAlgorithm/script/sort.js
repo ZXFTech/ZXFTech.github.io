@@ -102,6 +102,7 @@ binaryInsertionSort = array => {
 }
 
 mergeSort = array => {
+  if (!array.length) return
   if (array.length < 2) {
     return array
   }
@@ -116,15 +117,11 @@ merge = (array1, array2) => {
   let mergeArray = []
 
   while (array1.length && array2.length) {
-    // debugger
     if (array1[0] <= array2[0]) {
       mergeArray.push(array1.shift())
     } else {
       mergeArray.push(array2.shift())
     }
-
-    // console.log(mergeArray.length,'mergeArray');
-    // console.log(array1.length,'array1');
 
     if (!array1.length) {
       mergeArray = mergeArray.concat(array2)
