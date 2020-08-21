@@ -14,19 +14,21 @@ import { Component, Vue, Prop, Emit } from "vue-property-decorator";
 
 @Component
 export default class NavbarItem extends Vue {
-  @Prop({ default: 0 }) private index!: number;
+  @Prop({ default: () => [0] }) private index!: Array<number>;
   @Prop({ default: () => [] }) private parentIndex!: Array<number>;
   @Prop({ default: "" }) private parentNavUrl!: string;
   @Prop({ default: () => new Object() }) private navbarItemContent!: unknown;
   @Prop({ default: false }) private gotSubNavbar!: boolean;
 
   private clicked = false;
-  private currentIndex = [...this.parentIndex, this.index];
+  private currentIndex = this.index;
 
   @Emit("sendIndex") private emitClickEvent(currentIndex: Array<number>) {
     return currentIndex;
   }
   private onClick() {
+    console.log(this.currentIndex);
+
     this.emitClickEvent(this.currentIndex);
   }
 }

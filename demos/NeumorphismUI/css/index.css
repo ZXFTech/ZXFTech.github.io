@@ -28,6 +28,7 @@ body {
 .navbar_nav-list,
 .navbar_sub-nav-list,
 .navbar_secondary-nav-list,
+.navbar_hamburger-btn_label,
 .carousel_main {
   background-color: var(--bg-main-color);
   border-radius: 15px;
@@ -182,6 +183,10 @@ body {
 
 .navbar_sub-nav-list_item:hover .navbar_secondary-nav-list {
   display: flex;
+}
+
+.navbar_hamburger-btn_input {
+  display: none;
 }
 /* #endregion */
 

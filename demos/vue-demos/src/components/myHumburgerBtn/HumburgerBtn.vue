@@ -1,34 +1,32 @@
 <template>
-  <button class="navbar_humburger-btn" @click="toggle">
-    <span>菜</span>
-  </button>
+  <div class="navbar_hamburger-btn">
+    <input
+      id="navbar_hamburger-btn_input"
+      type="checkbox"
+      class="navbar_hamburger-btn_input"
+      @click="toggle"
+    />
+    <label for="navbar_hamburger-btn_input" class="navbar_hamburger-btn_label">
+      <i></i>
+      <i></i>
+      <i></i>
+    </label>
+  </div>
 </template>
-
 
 <script lang="ts">
 import { Component, Vue, Emit } from "vue-property-decorator";
 
 @Component
 export default class HumburgerBtn extends Vue {
-
   private open = false;
 
-  @Emit('sendToggleState') private emitToggleState():boolean {
-    return this.open
-  } 
-  private toggle() {    
-    this.open = !this.open
-    this.emitToggleState()
+  @Emit("sendToggleState") private emitToggleState(): boolean {
+    return this.open;
+  }
+  private toggle() {
+    this.open = !this.open;
+    this.emitToggleState();
   }
 }
 </script>
-
-
-<style lang="scss">
-.navbar_humburger-btn {
-  height: 100rem;
-  width: 10rem;
-  background-color: var(--bg-main-color);
-}
-
-</style>

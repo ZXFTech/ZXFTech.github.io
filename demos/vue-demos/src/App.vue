@@ -1,8 +1,15 @@
 <template>
   <div class="app">
     <TitleBar>
-      <HumburgetBtn @sendToggleState="setNavbarState" slot="left"></HumburgetBtn>
-      <Navbar v-if="navbarState" :navbarContent="navbar" slot="middle"></Navbar>
+      <HumburgetBtn
+        @sendToggleState="setNavbarState"
+        slot="right"
+      ></HumburgetBtn>
+      <Navbar
+        :class="{ showNavbar: navbarState }"
+        :navbarContent="navbar"
+        slot="middle"
+      ></Navbar>
     </TitleBar>
   </div>
 </template>
@@ -27,7 +34,7 @@ export default class App extends Vue {
 
   private navbarState = false;
 
-  private setNavbarState(state:boolean):void {
+  private setNavbarState(state: boolean): void {
     console.log(state);
     this.navbarState = state;
   }

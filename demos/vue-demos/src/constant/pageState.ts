@@ -26,17 +26,17 @@ export const navbarContent = [
         subNav:[
           {
             navName:'ByTag',
-            navText:'按标签',
+            navText:'按标签1',
             navUrl:'/tags'
           },
           {
             navName:'BySeries',
-            navText:'按系列',
+            navText:'按系列1',
             navUrl:'/series'
           },
           {
             navName:'ByDate',
-            navText:'按日期',
+            navText:'按日期1',
             navUrl:'/date'
           }
         ]

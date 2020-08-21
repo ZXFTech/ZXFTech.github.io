@@ -15,7 +15,7 @@ html {
   font-family: "ZCOOL KuaiLe", cursive;
   color: var(--font-color);
   text-align: left;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 body {
@@ -41,8 +41,7 @@ a {
 /*	#endregion	*/
 
 /*	#region	主题通用部分	*/
-.navbar_humburger-btn,
-.navbar_nav-list {
+.navbar_hamburger-btn_label {
   box-shadow: var(--shadow-out-md);
   border-radius: 1rem;
   border: var(--border);
@@ -53,10 +52,26 @@ a {
   top: 1rem;
   left: 1rem;
   right: 1rem;
-  padding-bottom: 0;
-  padding: 1rem;
+  z-index: 9998;
 
   font-size: 1.5rem;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+
+  border-radius: 1rem;
+  background: var(--bg-main-color);
+
+  transition: all 0.3s ease;
+}
+
+.showNavbar {
+  top: 1rem;
+  padding: 1rem;
+  padding-top: 4rem;
+  height: 80vh;
+  opacity: 1;
+  box-shadow: var(--shadow-out-md);
 }
 
 .navbar_sub-nav-list,
@@ -66,13 +81,16 @@ a {
 
 .navbar_sub-nav-list,
 .navbar_secondary-nav-list {
-  display: none;
-  box-shadow: var(--shadow-in-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-in-sm);
   border-radius: 1rem;
-  border: var(--border);
-  padding: 1rem;
-  padding-bottom: 0;
-  margin-bottom:1rem;
+}
+
+.navbar_sub-nav-list .navbar_list-item,
+.navbar_secondary-nav-list .navbar_list-item {
+  transition: height 0.3s ease;
+  height: 0;
+  overflow: hidden;
 }
 
 .navbar_nav_link {
@@ -92,16 +110,21 @@ a {
   top: 1.2rem;
   max-width: 1rem;
   transform: rotate(180deg);
-  transition: 0.618s ease;
+  transition: all 0.2s ease;
 }
 
-.active > .navbar_sub-nav-list,
-.active > .navbar_secondary-nav-list {
-  display: block;
+.active > .navbar_sub-nav-list > .navbar_list-item,
+.active > .navbar_secondary-nav-list > .navbar_list-item {
+  margin: 0.5rem;
+  height: 3rem;
+}
+
+.active > .navbar_sub-nav-list > .active {
+  height: auto;
 }
 
 .active > .navbar_nav_link {
-  box-shadow: var(--shadow-in-md);
+  box-shadow: var(--shadow-in-sm);
 }
 
 .active > .navbar_nav_link img {
@@ -116,12 +139,70 @@ a {
   height: 10rem;
 }
 
-.navbar_humburger-btn {
+.navbar_hamburger-btn {
   position: fixed;
-  right: 1rem;
-  top:1rem;
+  right: 2rem;
+  top: 1.75rem;
   height: 2.5rem;
   width: 2.5rem;
   outline: none;
+  z-index: 10000;
 }
+
+.navbar_hamburger-btn_input {
+  display: none;
+
+  &:checked + .navbar_hamburger-btn_label {
+    box-shadow: var(--shadow-in-sm);
+
+    i {
+      // width: 1.2rem;
+      transition: transform 0.2s ease;
+
+      &:nth-child(1) {
+        margin-top: 1.175rem;
+        transform: rotate(135deg);
+      }
+
+      &:nth-child(2) {
+        margin-top: -0.3rem;
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        margin-top: 0;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+.navbar_hamburger-btn_label {
+  display: block;
+  height: 2.5rem;
+  width: 2.5rem;
+  background: var(--bg-main-color);
+  i {
+    display: block;
+    width: 1.5rem;
+    height: 0.15rem;
+    background: #000000;
+    border-radius: 0.3rem;
+    margin: 0 auto;
+    transition: transform 0.2 ease !important;
+
+    &:nth-child(1) {
+      margin-top: 0.725rem;
+      transform: rotate(0);
+    }
+
+    &:nth-child(2) {
+      margin-top: 0.3rem;
+    }
+    &:nth-child(3) {
+      margin-top: 0.3rem;
+      transform: rotate(0);
+    }
+  }
+}
+
 /*	#endregion	*/
