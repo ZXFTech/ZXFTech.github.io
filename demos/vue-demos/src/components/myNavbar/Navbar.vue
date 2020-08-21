@@ -22,7 +22,6 @@
         :parentNavbarUrl="navbarItem.navUrl"
         :navbarIndex="[...currentIndex, index]"
         :navbarLevel="navbarLevel + 1"
-        :activeIndex1="activeindex[navbarLevel+1]"
         @sendIndex="setIndex"
       ></Navbar>
     </li>
@@ -58,7 +57,6 @@ export default class Navbar extends Vue {
   ];
 
   private currentIndex = this.navbarIndex;
-  private mactiveIndex1 = this.activeIndex1;
 
   /**
    * checkIsActive

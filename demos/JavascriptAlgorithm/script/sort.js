@@ -101,7 +101,7 @@ binaryInsertionSort = array => {
   return array
 }
 
-mergeSort = array => {
+mergeSortRecursion = array => {
   if (!array.length) return
   if (array.length < 2) {
     return array
@@ -134,11 +134,44 @@ merge = (array1, array2) => {
   return mergeArray
 }
 
+mergeSortIteration = array => {
+  var targetArray = array
+  if (!array.length) return
+
+  let leftMin, leftMax, rightMin, rightMax
+  var tempArray = []
+
+  for (let i = 1; i < array.length; i *= 2) {
+    for (leftMin = 0; leftMin < array.length - i; leftMin += i * 2) {
+      leftMax = leftMin + i
+      rightMin = leftMin + i
+      rightMax = (rightMin + i) > array.length ? array.length : rightMin + i
+      debugger
+      let mergeStep = 0
+      while (leftMin < leftMax && rightMin < rightMax) {
+        if (array[leftMin] <= array[rightMin]) {
+          tempArray[mergeStep++] = array[leftMin++]
+        } else {
+          tempArray[mergeStep++] = array[rightMin++]
+        }
+
+        while (leftMin < leftMax) {
+          tempArray[mergeStep++] = array[leftMin++]
+        }
+        while (mergeStep > 0) {
+          array[leftMin + mergeStep--] = tempArray[mergeStep--]
+        }
+      }
+    }
+  }
+  return array
+}
+
 const sortArray1 = [3, 2, 6, 5, 1, 4, 9, 2, 5, 5, 3, 2, 7, 4, 5, 6, 7, 3, 5, 6, 5, 7, 1, 8]
 const sortArray2 = [1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
 console.log(sortArray1);
 console.time('sort1')
-const sorted1 = mergeSort(sortArray1)
+const sorted1 = mergeSortIteration(sortArray1)
 console.timeEnd('sort1')
 console.log(sorted1);
 // console.time('sort1-2')
@@ -147,6 +180,6 @@ console.log(sorted1);
 // console.log(sorted2);
 console.log(sortArray2);
 console.time('sort2')
-const sorted3 = binaryInsertionSort(sortArray2)
+const sorted3 = mergeSortIteration(sortArray2)
 console.timeEnd('sort2')
-console.log(sorted3);
+console.log(sorted3)
