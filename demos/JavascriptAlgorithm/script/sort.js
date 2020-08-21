@@ -142,11 +142,12 @@ mergeSortIteration = array => {
   var tempArray = []
 
   for (let i = 1; i < array.length; i *= 2) {
-    for (leftMin = 0; leftMin < array.length - i; leftMin += i * 2) {
+    for (leftMin = 0; leftMin < array.length; leftMin += i) {
       leftMax = leftMin + i
-      rightMin = leftMin + i
+      rightMin = leftMin + i 
       rightMax = (rightMin + i) > array.length ? array.length : rightMin + i
-      debugger
+      // console.log(leftMin, leftMax, rightMin, rightMax)
+      // debugger
       let mergeStep = 0
       while (leftMin < leftMax && rightMin < rightMax) {
         if (array[leftMin] <= array[rightMin]) {
@@ -158,9 +159,18 @@ mergeSortIteration = array => {
         while (leftMin < leftMax) {
           tempArray[mergeStep++] = array[leftMin++]
         }
-        while (mergeStep > 0) {
-          array[leftMin + mergeStep--] = tempArray[mergeStep--]
+        while (rightMin < rightMax) {
+          tempArray[mergeStep++] = array[rightMin++]
         }
+        // while (mergeStep > 0) {
+        //   array[--rightMax] = tempArray[--mergeStep]
+        // }
+        console.log(mergeStep)
+        for (let j = 0; j < mergeStep; j++) {
+          array[leftMin - i + j] = tempArray[j]
+        }
+        // console.log(leftMin, leftMax, rightMin, rightMax)
+        // console.log(array)
       }
     }
   }
