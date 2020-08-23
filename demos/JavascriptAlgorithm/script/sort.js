@@ -110,10 +110,10 @@ mergeSortRecursion = array => {
   const middle = array.length >> 1
   const leftArray = array.slice(0, middle)
   const rightArray = array.slice(middle)
-  return merge(mergeSort(leftArray), mergeSort(rightArray))
+  return mergeSortMerge(mergeSortMerge(leftArray), mergeSortMerge(rightArray))
 }
 
-merge = (array1, array2) => {
+mergeSortMerge = (array1, array2) => {
   let mergeArray = []
 
   while (array1.length && array2.length) {
@@ -169,19 +169,75 @@ mergeSortIteration = array => {
   return array
 }
 
+quickSortIteration = array => {
+  if (!array.length) return array
+
+  if (array.length <= 1) {
+    return array
+  }
+
+  let base = array[0]
+  let smallerArray = []
+  let largerArray = []
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] < base) {
+      smallerArray.push(array[i])
+    } else {
+      largerArray.push(array[i])
+    }
+  }
+
+  return [...quickSortIteration(smallerArray), base, ...quickSortIteration(largerArray)]
+}
+
+quickSortInPlace = (array, left, right) => {
+  let leftIndex = typeof left === 'number' ? left : 0
+  let rightIndex = typeof right === 'number' ? right : array.length - 1
+
+
+  let pivotIndex = leftIndex // 这个值也可以自己选，有条件的情况下，尽量选择数组的中位数所在的index
+
+  if (leftIndex < rightIndex) {
+    pivotIndex = partition(array, leftIndex, rightIndex, pivotIndex)
+    quickSortInPlace(array, leftIndex, pivotIndex - 1)
+    quickSortInPlace(array, pivotIndex + 1, rightIndex)
+  }
+  return array
+}
+
+partition = (array, left, right, pivotIndex) => {
+  let pivotValue = array[pivotIndex]
+  let temp = array[right]
+  array[right] = pivotValue
+  array[pivotIndex] = temp
+  let storeIndex = left
+
+  for (let i = left; i < right; i++) {
+    if (array[i] <= pivotValue) {
+      temp = array[storeIndex]
+      array[storeIndex] = array[i]
+      array[i] = temp
+      storeIndex++
+    }
+  }
+  temp = array[storeIndex]
+  array[storeIndex] = array[right]
+  array[right] = temp
+  return storeIndex
+}
 const sortArray1 = [3, 2, 6, 5, 1, 4, 9, 2, 5, 5, 3, 2, 7, 4, 5, 6, 7, 3, 5, 6, 5, 7, 1, 8]
 const sortArray2 = [1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
 console.log(sortArray1);
 console.time('sort1')
-const sorted1 = mergeSortIteration(sortArray1)
+const sorted1 = quickSortInPlace(sortArray1)
 console.timeEnd('sort1')
-console.log(sorted1);
+console.log(sortArray1);
 // console.time('sort1-2')
 // const sorted2 = mergeSort(sortArray2)
 // console.timeEnd('sort1-2')
 // console.log(sorted2);
 console.log(sortArray2);
 console.time('sort2')
-const sorted3 = mergeSortIteration(sortArray2)
+const sorted3 = quickSortInPlace(sortArray2)
 console.timeEnd('sort2')
 console.log(sorted3)
