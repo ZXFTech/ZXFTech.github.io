@@ -225,11 +225,31 @@ partition = (array, left, right, pivotIndex) => {
   array[right] = temp
   return storeIndex
 }
+
+shellSort = (array, step) => {
+  if (!array.length) return
+  let gap = 1, temp, i, j
+  step = Math.floor(step) || 3
+  while (gap < array.length / step) {
+    gap = gap * step + 1
+  }
+  for (gap; gap > 0; gap = Math.floor(gap / step)) {
+    for (i = gap; i < array.length; i++) {
+      temp = array[i]
+      for (j = i; j - gap > 0 && array[j - gap] > temp; j -= gap) {
+        array[j] = array[j - gap];
+      }
+      array[j] = temp
+    }
+  }
+  return array
+}
+
 const sortArray1 = [3, 2, 6, 5, 1, 4, 9, 2, 5, 5, 3, 2, 7, 4, 5, 6, 7, 3, 5, 6, 5, 7, 1, 8]
 const sortArray2 = [1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
 console.log(sortArray1);
 console.time('sort1')
-const sorted1 = quickSortInPlace(sortArray1)
+const sorted1 = shellSort(sortArray1, 3)
 console.timeEnd('sort1')
 console.log(sortArray1);
 // console.time('sort1-2')
@@ -238,6 +258,6 @@ console.log(sortArray1);
 // console.log(sorted2);
 console.log(sortArray2);
 console.time('sort2')
-const sorted3 = quickSortInPlace(sortArray2)
+const sorted3 = shellSort(sortArray2, 3)
 console.timeEnd('sort2')
 console.log(sorted3)
