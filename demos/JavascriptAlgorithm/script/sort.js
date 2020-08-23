@@ -245,19 +245,41 @@ shellSort = (array, step) => {
   return array
 }
 
+countingSort = array => {
+  let indexArray = []
+  let sortedArray = []
+  let max = 0, min = 0
+  for (let i = 0; i < array.length; i++) {
+    let j = array[i]
+    min = min < j ? min : j
+    max = max > j ? max : j
+    indexArray[j] = !indexArray[j] ? 1 : ++indexArray[j]
+  }
+
+  for (let i = min; i <= max; i++) {
+    if (indexArray[i] !== undefined) {
+      while (indexArray[i] > 0) {
+        sortedArray.push(i)
+        indexArray[i]--
+      }
+    }
+  }
+  return sortedArray
+}
+
 const sortArray1 = [3, 2, 6, 5, 1, 4, 9, 2, 5, 5, 3, 2, 7, 4, 5, 6, 7, 3, 5, 6, 5, 7, 1, 8]
 const sortArray2 = [1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
 console.log(sortArray1);
 console.time('sort1')
-const sorted1 = shellSort(sortArray1, 3)
+const sorted1 = countingSort(sortArray1)
 console.timeEnd('sort1')
-console.log(sortArray1);
+console.log(sorted1);
 // console.time('sort1-2')
 // const sorted2 = mergeSort(sortArray2)
 // console.timeEnd('sort1-2')
 // console.log(sorted2);
 console.log(sortArray2);
 console.time('sort2')
-const sorted3 = shellSort(sortArray2, 3)
+const sorted3 = countingSort(sortArray2)
 console.timeEnd('sort2')
 console.log(sorted3)
