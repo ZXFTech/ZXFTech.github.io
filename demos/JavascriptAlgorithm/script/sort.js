@@ -107,14 +107,14 @@ mergeSortRecursion = (array) => {
     return array;
   }
 
-  const middle = array.length >> 1
-  const leftArray = array.slice(0, middle)
-  const rightArray = array.slice(middle)
-  return mergeSortMerge(mergeSortMerge(leftArray), mergeSortMerge(rightArray))
-}
+  const middle = array.length >> 1;
+  const leftArray = array.slice(0, middle);
+  const rightArray = array.slice(middle);
+  return mergeSortMerge(mergeSortMerge(leftArray), mergeSortMerge(rightArray));
+};
 
 mergeSortMerge = (array1, array2) => {
-  let mergeArray = []
+  let mergeArray = [];
 
   while (array1.length && array2.length) {
     if (array1[0] <= array2[0]) {
@@ -134,152 +134,261 @@ mergeSortMerge = (array1, array2) => {
   return mergeArray;
 };
 
-mergeSortIteration = array => {
-  if (!array.length) return
+mergeSortIteration = (array) => {
+  if (!array.length) return;
 
   let leftMin, leftMax, rightMin, rightMax;
   var tempArray = [];
 
   for (let i = 1; i < array.length; i *= 2) {
     for (leftMin = 0; leftMin < array.length; leftMin += i) {
-      leftMax = leftMin + i
-      rightMin = leftMin + i
-      rightMax = (rightMin + i) > array.length ? array.length : rightMin + i
-      let mergeStep = 0
+      leftMax = leftMin + i;
+      rightMin = leftMin + i;
+      rightMax = rightMin + i > array.length ? array.length : rightMin + i;
+      let mergeStep = 0;
       while (leftMin < leftMax && rightMin < rightMax) {
         if (array[leftMin] <= array[rightMin]) {
           tempArray[mergeStep++] = array[leftMin++];
         } else {
-          tempArray[mergeStep++] = array[rightMin++]
+          tempArray[mergeStep++] = array[rightMin++];
         }
       }
 
       while (leftMin < leftMax) {
-        tempArray[mergeStep++] = array[leftMin++]
+        tempArray[mergeStep++] = array[leftMin++];
       }
       while (rightMin < rightMax) {
-        tempArray[mergeStep++] = array[rightMin++]
+        tempArray[mergeStep++] = array[rightMin++];
       }
-      console.log(mergeStep)
+      console.log(mergeStep);
       for (let j = 0; j < mergeStep; j++) {
-        array[leftMin - i + j] = tempArray[j]
+        array[leftMin - i + j] = tempArray[j];
       }
     }
   }
   return array;
 };
 
-quickSortIteration = array => {
-  if (!array.length) return array
+quickSortIteration = (array) => {
+  if (!array.length) return array;
 
   if (array.length <= 1) {
-    return array
+    return array;
   }
 
-  let base = array[0]
-  let smallerArray = []
-  let largerArray = []
+  let base = array[0];
+  let smallerArray = [];
+  let largerArray = [];
   for (let i = 1; i < array.length; i++) {
     if (array[i] < base) {
-      smallerArray.push(array[i])
+      smallerArray.push(array[i]);
     } else {
-      largerArray.push(array[i])
+      largerArray.push(array[i]);
     }
   }
 
-  return [...quickSortIteration(smallerArray), base, ...quickSortIteration(largerArray)]
-}
+  return [
+    ...quickSortIteration(smallerArray),
+    base,
+    ...quickSortIteration(largerArray),
+  ];
+};
 
 quickSortInPlace = (array, left, right) => {
-  let leftIndex = typeof left === 'number' ? left : 0
-  let rightIndex = typeof right === 'number' ? right : array.length - 1
+  let leftIndex = typeof left === "number" ? left : 0;
+  let rightIndex = typeof right === "number" ? right : array.length - 1;
 
-
-  let pivotIndex = leftIndex // 这个值也可以自己选，有条件的情况下，尽量选择数组的中位数所在的index
+  let pivotIndex = leftIndex; // 这个值也可以自己选，有条件的情况下，尽量选择数组的中位数所在的index
 
   if (leftIndex < rightIndex) {
-    pivotIndex = partition(array, leftIndex, rightIndex, pivotIndex)
-    quickSortInPlace(array, leftIndex, pivotIndex - 1)
-    quickSortInPlace(array, pivotIndex + 1, rightIndex)
+    pivotIndex = partition(array, leftIndex, rightIndex, pivotIndex);
+    quickSortInPlace(array, leftIndex, pivotIndex - 1);
+    quickSortInPlace(array, pivotIndex + 1, rightIndex);
   }
-  return array
-}
+  return array;
+};
 
 partition = (array, left, right, pivotIndex) => {
-  let pivotValue = array[pivotIndex]
-  let temp = array[right]
-  array[right] = pivotValue
-  array[pivotIndex] = temp
-  let storeIndex = left
+  let pivotValue = array[pivotIndex];
+  let temp = array[right];
+  array[right] = pivotValue;
+  array[pivotIndex] = temp;
+  let storeIndex = left;
 
   for (let i = left; i < right; i++) {
     if (array[i] <= pivotValue) {
-      temp = array[storeIndex]
-      array[storeIndex] = array[i]
-      array[i] = temp
-      storeIndex++
+      temp = array[storeIndex];
+      array[storeIndex] = array[i];
+      array[i] = temp;
+      storeIndex++;
     }
   }
-  temp = array[storeIndex]
-  array[storeIndex] = array[right]
-  array[right] = temp
-  return storeIndex
-}
+  temp = array[storeIndex];
+  array[storeIndex] = array[right];
+  array[right] = temp;
+  return storeIndex;
+};
 
 shellSort = (array, step) => {
-  if (!array.length) return
-  let gap = 1, temp, i, j
-  step = Math.floor(step) || 3
+  if (!array.length) return;
+  let gap = 1,
+    temp,
+    i,
+    j;
+  step = Math.floor(step) || 3;
   while (gap < array.length / step) {
-    gap = gap * step + 1
+    gap = gap * step + 1;
   }
   for (gap; gap > 0; gap = Math.floor(gap / step)) {
     for (i = gap; i < array.length; i++) {
-      temp = array[i]
+      temp = array[i];
       for (j = i; j - gap > 0 && array[j - gap] > temp; j -= gap) {
         array[j] = array[j - gap];
       }
-      array[j] = temp
+      array[j] = temp;
     }
   }
-  return array
-}
+  return array;
+};
 
-countingSort = array => {
-  let indexArray = []
-  let sortedArray = []
-  let max = 0, min = 0
+countingSort = (array) => {
+  let indexArray = [];
+  let sortedArray = [];
+  let max = 0,
+    min = 0;
   for (let i = 0; i < array.length; i++) {
-    let j = array[i]
-    min = min < j ? min : j
-    max = max > j ? max : j
-    indexArray[j] = !indexArray[j] ? 1 : ++indexArray[j]
+    let j = array[i];
+    min = min < j ? min : j;
+    max = max > j ? max : j;
+    indexArray[j] = !indexArray[j] ? 1 : ++indexArray[j];
   }
 
   for (let i = min; i <= max; i++) {
     if (indexArray[i] !== undefined) {
       while (indexArray[i] > 0) {
-        sortedArray.push(i)
-        indexArray[i]--
+        sortedArray.push(i);
+        indexArray[i]--;
       }
     }
   }
-  return sortedArray
-}
+  return sortedArray;
+};
 
-const sortArray1 = [3, 2, 6, 5, 1, 4, 9, 2, 5, 5, 3, 2, 7, 4, 5, 6, 7, 3, 5, 6, 5, 7, 1, 8]
-const sortArray2 = [1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+bucketSort = (array, bucketSize = 5) => {
+  if (!array.length) return;
+  let min = 0,
+    max = 0;
+  for (let i = 0; i < array.length; i++) {
+    min = array[i] < min ? array[i] : min;
+    max = array[i] > max ? array[i] : max;
+  }
+  let bucketArray = [];
+  let resultArray = [];
+  for (let i = 0; i < bucketSize; i++) {
+    bucketArray[i] = [];
+  }
+  for (let i = 0; i < array.length; i++) {
+    const j = Math.floor((array[i] - min) / bucketSize);
+    bucketArray[j].push(array[i]);
+  }
+
+  for (let i = 0; i < bucketArray.length; i++) {
+    sortArray = quickSortInPlace(bucketArray[i]);
+    for (let j = 0; j < sortArray.length; j++) {
+      resultArray.push(sortArray[j]);
+    }
+  }
+  return resultArray;
+};
+
+radixSort = (array) => {
+  let max = 0;
+  for (let i = 0; i < array.length; i++) {
+    max = array[i] > max ? array[i] : max;
+  }
+  let digit = `${max}`.length;
+  let digitArray = [];
+  let startDigit = 1;
+  while (digit > 0) {
+    startDigit *= 10;
+    for (let i = 0; i < array.length; i++) {
+      const index = array[i] % startDigit;
+      !digitArray[index] && (digitArray[index] = []);
+      digitArray[index].push(array[i]);
+    }
+    array = [];
+    for (let i = 0; i < digitArray.length; i++) {
+      digitArray[i] && (array = array.concat(digitArray[i]));
+    }
+    digitArray = [];
+    digit--;
+  }
+  return array;
+};
+
+const sortArray1 = [
+  3,
+  2,
+  6,
+  5,
+  1,
+  4,
+  9,
+  2,
+  5,
+  5,
+  3,
+  2,
+  7,
+  4,
+  5,
+  6,
+  7,
+  3,
+  5,
+  6,
+  5,
+  7,
+  1,
+  8,
+];
+const sortArray2 = [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  6,
+  6,
+  6,
+  6,
+  6,
+  6,
+  6,
+  6,
+  6,
+  6,
+  6,
+  6,
+  6,
+  6,
+  6,
+  6,
+  6,
+  6,
+];
 console.log(sortArray1);
-console.time('sort1')
-const sorted1 = countingSort(sortArray1)
-console.timeEnd('sort1')
+console.time("sort1");
+const sorted1 = radixSort(sortArray1);
+console.timeEnd("sort1");
 console.log(sorted1);
 // console.time('sort1-2')
 // const sorted2 = mergeSort(sortArray2)
 // console.timeEnd('sort1-2')
 // console.log(sorted2);
 console.log(sortArray2);
-console.time('sort2')
-const sorted3 = countingSort(sortArray2)
-console.timeEnd('sort2')
-console.log(sorted3)
+console.time("sort2");
+const sorted3 = radixSort(sortArray2);
+console.timeEnd("sort2");
+console.log(sorted3);

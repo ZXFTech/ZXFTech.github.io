@@ -8,7 +8,15 @@ _迁移中..._
 
 ## javascript 算法
 
-> [十大排序算法(一)-冒泡排序](<JavascriptAlgorithm/十大排序算法(一)-冒泡排序.md>)
+> [十大排序算法(一)-冒泡排序](<JavascriptAlgorithm/十大排序算法(一)-冒泡排序.md>)  
+> [十大排序算法(二)-选择排序](<JavascriptAlgorithm/十大排序算法(二)-选择排序.md>)  
+> [十大排序算法(三)-插入排序](<JavascriptAlgorithm/十大排序算法(三)-插入排序.md>)  
+> [十大排序算法(四)-归并排序](<JavascriptAlgorithm/十大排序算法(四)-归并排序.md>)  
+> [十大排序算法(五)-快速排序](<JavascriptAlgorithm/十大排序算法(五)-快速排序.md>)  
+> [十大排序算法(六)-选择排序](<JavascriptAlgorithm/十大排序算法(六)-希尔排序.md>)  
+> [十大排序算法(七)-计数排序](<JavascriptAlgorithm/十大排序算法(七)-计数排序.md>)  
+> [十大排序算法(八)-桶排序](<JavascriptAlgorithm/十大排序算法(八)-桶排序.md>)  
+> [十大排序算法(九)-基数排序](<JavascriptAlgorithm/十大排序算法(九)-基数排序.md>)
 
 ## 各种组件实现
 
