@@ -15,7 +15,7 @@ html {
   font-family: "ZCOOL KuaiLe", cursive;
   color: var(--font-color);
   text-align: left;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 body {
@@ -40,12 +40,248 @@ a {
 }
 /*	#endregion	*/
 
+/*	#region	主题通用部分	*/
+.navbar_hamburger-btn {
+  display: none;
+}
+.navbar_nav-list,
+.navbar_sub-nav-list,
+.navbar_secondary-nav-list,
+.navbar_hamburger-btn_label,
+.carousel_main {
+  background-color: var(--bg-main-color);
+  border-radius: 15px;
+  border: var(--border);
+  box-shadow: var(--shadow-out-md);
+}
+
+.carousel_container {
+  background-color: var(--bg-main-color);
+  border-radius: 15px;
+  box-shadow: var(--shadow-in-md);
+}
+
+.navbar_nav-list .navbar_list-item,
+.navbar_sub-nav-list .navbar_list-item,
+.navbar_secondary-nav-list .navbar_list-item {
+  // background-color: var(--bg-color);
+  background-color: var(--bg-main-color);
+  border-radius: 10px;
+}
+
+.active {
+  & > .navbar_nav_link {
+    img {
+      transform: rotate(180deg);
+    }
+  }
+  .navbar_sub-nav-list {
+    display: block;
+  }
+}
+
+/*	#endregion	*/
+
+/* #region 导航栏 navbar 凹槽新拟态 */
+.navbar_main {
+  /*	布局	*/
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  margin: auto;
+  /*  样式  */
+  // background-color: var(--bg-main-color);
+  // box-shadow: var(--shadow-out-md);
+}
+
+.navbar_main a {
+  color: var(--link-color);
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.navbar_nav-list {
+  /*	布局	*/
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-between;
+  padding: 0 15px;
+  margin: auto;
+  /* border: var(--border); */
+}
+
+.navbar_list-item {
+  /*	布局	*/
+  position: relative;
+  margin-right: 20px;
+  padding: 0 35px;
+}
+
+.navbar_nav_link {
+  position: relative;
+  padding: 0 1rem;
+  margin-right: 1rem;
+  line-height: 2.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.navbar_nav_link img {
+  display: inline;
+  max-height: 10px;
+  max-width: 10px;
+  transition: all 0.3s ease;
+}
+
+.navbar_nav-list_item:hover .navbar_nav_link img {
+  transform: rotate(180deg);
+}
+
+.navbar_nav-list_item:hover .navbar_sub-nav-list {
+  display: block;
+}
+
+.navbar_sub-nav-list {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 120%;
+  list-style: none;
+  margin: 0;
+  /* width: 100px; */
+  z-index: 99;
+}
+
+.navbar_sub-nav-list .navbar_list-item {
+  position: relative;
+  width: 100px;
+  line-height: 2rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  display: block;
+  padding: 5px 10px;
+  margin: 15px;
+}
+
+.navbar_sub-nav-list .navbar_list-item a span {
+  display: inline-block;
+  width: 60px;
+}
+
+.navbar_sub-nav-list .navbar_list-item a img {
+  display: inline-block;
+  max-height: 10px;
+  max-width: 10px;
+  transition: all 0.3s ease;
+}
+
+.navbar_secondary-nav-list {
+  list-style: none;
+  padding-bottom: 15px;
+  margin: 0;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  left: 110%;
+  top: 0;
+  z-index: 98;
+
+  display: none;
+}
+
+.navbar_secondary-nav-list .navbar_list-item {
+  display: inline-block;
+  padding: 5px 20px;
+  margin: 15px;
+  margin-bottom: 0;
+}
+
+.navbar_hamburger-btn_input {
+  display: none;
+}
+/* #endregion */
+
 @media screen and (max-width: 864px) {
+  html {
+    font-size: 14px !important;
+  }
   /*	#region	主题通用部分	*/
   .navbar_hamburger-btn_label {
     box-shadow: var(--shadow-out-md);
     border-radius: 1rem;
     border: var(--border);
+  }
+
+  .navbar_hamburger-btn {
+    position: fixed;
+    display: block !important;
+    right: 2rem;
+    top: 1.75rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    outline: none;
+    z-index: 10000;
+  }
+
+  .navbar_hamburger-btn_input {
+    display: none;
+  }
+  .checked .navbar_hamburger-btn_label {
+    box-shadow: var(--shadow-in-sm);
+
+    i {
+      // width: 1.2rem;
+      transition: transform 0.2s ease;
+
+      &:nth-child(1) {
+        margin-top: 1.175rem;
+        transform: rotate(135deg);
+      }
+
+      &:nth-child(2) {
+        margin-top: -0.3rem;
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        margin-top: 0;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .navbar_hamburger-btn_label {
+    display: block;
+    height: 2.5rem;
+    width: 2.5rem;
+    background: var(--bg-main-color);
+    i {
+      display: block;
+      width: 1.5rem;
+      height: 0.15rem;
+      background: #000000;
+      border-radius: 0.3rem;
+      margin: 0 auto;
+      transition: transform 0.2 ease !important;
+
+      &:nth-child(1) {
+        margin-top: 0.725rem;
+        transform: rotate(0);
+      }
+
+      &:nth-child(2) {
+        margin-top: 0.3rem;
+      }
+      &:nth-child(3) {
+        margin-top: 0.3rem;
+        transform: rotate(0);
+      }
+    }
   }
 
   .navbar_nav-list {
@@ -147,73 +383,8 @@ a {
 
   /*	#region	标题栏 title-bar 凹槽新拟态	*/
   .title-bar {
-    position: relative;
-    height: 10rem;
-  }
-
-  .navbar_hamburger-btn {
-    position: fixed;
-    right: 2rem;
-    top: 1.75rem;
-    height: 2.5rem;
-    width: 2.5rem;
-    outline: none;
-    z-index: 10000;
-  }
-
-  .navbar_hamburger-btn_input {
-    display: none;
-  }
-  .checked .navbar_hamburger-btn_label {
-    box-shadow: var(--shadow-in-sm);
-
-    i {
-      // width: 1.2rem;
-      transition: transform 0.2s ease;
-
-      &:nth-child(1) {
-        margin-top: 1.175rem;
-        transform: rotate(135deg);
-      }
-
-      &:nth-child(2) {
-        margin-top: -0.3rem;
-        opacity: 0;
-      }
-      &:nth-child(3) {
-        margin-top: 0;
-        transform: rotate(45deg);
-      }
-    }
-  }
-
-  .navbar_hamburger-btn_label {
-    display: block;
-    height: 2.5rem;
-    width: 2.5rem;
-    background: var(--bg-main-color);
-    i {
-      display: block;
-      width: 1.5rem;
-      height: 0.15rem;
-      background: #000000;
-      border-radius: 0.3rem;
-      margin: 0 auto;
-      transition: transform 0.2 ease !important;
-
-      &:nth-child(1) {
-        margin-top: 0.725rem;
-        transform: rotate(0);
-      }
-
-      &:nth-child(2) {
-        margin-top: 0.3rem;
-      }
-      &:nth-child(3) {
-        margin-top: 0.3rem;
-        transform: rotate(0);
-      }
-    }
+    // position: relative;
+    // height: 10rem;
   }
   /*	#endregion	*/
 }

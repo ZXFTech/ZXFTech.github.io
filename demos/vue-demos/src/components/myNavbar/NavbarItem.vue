@@ -1,6 +1,6 @@
 <template>
   <li class="navbar_list-item" :class="{ active: setActive() }">
-    <a class="navbar_nav_link" @click="onClick">
+    <a class="navbar_nav_link" @click="onClick" href="#">
       <span class="navbar_link_inner-text">{{
         navbarContentItem.navText
       }}</span>
