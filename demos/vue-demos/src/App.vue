@@ -1,41 +1,31 @@
 <template>
   <div class="app">
     <TitleBar>
-      <HumburgetBtn
-        @sendToggleState="setNavbarState"
-        slot="right"
-      ></HumburgetBtn>
-      <Navbar
-        :class="{ showNavbar: navbarState }"
-        :navbarContent="navbar"
-        slot="middle"
-      ></Navbar>
+      <NavbarMain slot="middle"></NavbarMain>
     </TitleBar>
+    <router-view></router-view>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import TitleBar from "./components/myTitleBar/TitleBar.vue";
-import HumburgetBtn from "./components/myHumburgerBtn/HumburgerBtn.vue";
+import NavbarMain from "./components/myNavbar/NavbarMain.vue";
 import Navbar from "./components/myNavbar/Navbar.vue";
 
-import { navbarContent } from "./constant/pageState";
+import { navbarContentList } from "./constant/pageState";
+Vue.component("Navbar", Navbar);
 
 @Component({
   components: {
     TitleBar,
-    Navbar,
-    HumburgetBtn,
+    NavbarMain,
   },
 })
 export default class App extends Vue {
-  private navbar = navbarContent;
-
   private navbarState = false;
 
   private setNavbarState(state: boolean): void {
-    console.log(state);
     this.navbarState = state;
   }
 }
