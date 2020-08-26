@@ -1,5 +1,5 @@
 <template>
-  <ul :class="levelClass[navbarLevel] || 'navbar_secondary_nav_list'">
+  <ul :class="levelClass[navbarLevel] || 'navbar_secondary-nav-list'">
     <NavbarItem
       v-for="navbarContentItem in navbarContentList"
       :key="navbarContentItem.navName"
