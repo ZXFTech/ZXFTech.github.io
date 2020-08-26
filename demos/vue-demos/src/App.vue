@@ -3,7 +3,7 @@
     <TitleBar>
       <NavbarMain slot="middle"></NavbarMain>
     </TitleBar>
-    <router-view></router-view>
+    <router-view class="main-page"></router-view>
   </div>
 </template>
 

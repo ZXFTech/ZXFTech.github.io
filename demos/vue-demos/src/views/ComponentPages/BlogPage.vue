@@ -11,15 +11,15 @@
 <script lang="ts">
 // @ is an alias to /src
 import { Prop, Component, Vue } from "vue-property-decorator";
-import BlogSection from "../components/myBlog/BlogSection.vue";
-import { BlogContent, blogContentList } from "../constant/pageState";
+import BlogSection from "../../components/myBlog/BlogSection.vue";
+import { BlogContent, blogContentList } from "../../constant/pageState";
 
 @Component({
   components: {
     BlogSection,
   },
 })
-export default class Home extends Vue {
+export default class BlogPage extends Vue {
   private blogList: BlogContent[] = blogContentList;
 }
 </script>
