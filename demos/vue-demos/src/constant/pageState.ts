@@ -35,11 +35,42 @@ export const navbarContentList: Array<NavbarContent> = [
   },
 ];
 
-export interface BlogComments {
+export interface BlogComment {
   author: string;
-  time: string;
-  reply?: Array<BlogComments>;
+  date: string;
+  content: string;
+  likes: number;
+  reply?: Array<BlogComment>;
 }
+
+export const blogCommentList = [
+  {
+    author: "feline",
+    date: "2020-04-07",
+    content: "第一条评论测试",
+    likes: 666,
+    reply: [
+      {
+        author: "feline",
+        date: "2020-04-07",
+        content: "第一条回复测试",
+        likes: 666,
+      },
+      {
+        author: "feline",
+        date: "2020-04-07",
+        content: "第二条回复测试",
+        likes: 666,
+      },
+      {
+        author: "feline",
+        date: "2020-04-07",
+        content: "第三条回复测试",
+        likes: 666,
+      },
+    ],
+  },
+];
 
 export interface BlogContent {
   title: string;
