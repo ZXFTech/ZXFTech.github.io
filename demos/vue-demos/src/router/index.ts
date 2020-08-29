@@ -37,6 +37,11 @@ const routes: Array<RouteConfig> = [
     // which is lazy-loaded when the route is visited.
     component: () => import("../views/About.vue"),
   },
+  {
+    path: "/blog",
+    name: "Blog",
+    component: () => import("../views/BlogPage.vue"),
+  },
 ];
 
 const router = new VueRouter({
