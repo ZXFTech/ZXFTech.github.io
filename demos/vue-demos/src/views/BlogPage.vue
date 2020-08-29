@@ -30,16 +30,29 @@
         <span class="fa fa-weixin"></span>
       </a>
     </div>
+    <Comment :commentList="commentList"></Comment>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { blogContentList, BlogContent } from "../constant/pageState";
+import {
+  blogContentList,
+  BlogContent,
+  blogCommentList,
+  BlogComment,
+} from "../constant/pageState";
 
-@Component
+import Comment from "../components/myComment/Comment.vue";
+
+@Component({
+  components: {
+    Comment,
+  },
+})
 export default class BlogPage extends Vue {
   private blogContent: BlogContent = blogContentList[0];
+  private commentList: BlogComment[] = blogCommentList;
 }
 </script>
 

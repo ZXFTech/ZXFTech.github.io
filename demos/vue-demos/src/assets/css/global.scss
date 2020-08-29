@@ -55,6 +55,25 @@ a {
 /*	#endregion	*/
 
 /*	#region	主体	*/
+
+/*	#region	主题通用部分 凹槽新拟态	*/
+.navbar_nav-list,
+.navbar_sub-nav-list,
+.navbar_secondary-nav-list,
+.navbar_hamburger-btn_label,
+.blog_section,
+.blog_section_img,
+.blog-page_content,
+.comment_main,
+.carousel_main {
+  background-color: var(--bg-main-color);
+  border-radius: 1rem;
+  border: var(--border);
+  box-shadow: var(--shadow-out-md);
+}
+/*	#endregion	*/
+
+/*	#region	博客页面 blog-page 凹槽新拟态	*/
 .blog-page_main {
   padding: 0;
   margin: auto;
@@ -78,11 +97,11 @@ a {
   span {
     margin-right: 0.5rem;
     font-size: 0.7rem;
-    padding: 0.3rem 0.5rem;
+    padding: 0.35rem 0.65rem;
     border-radius: 1rem;
     border: var(--border);
 
-    box-shadow: var(--shadow-in-md);
+    box-shadow: var(--shadow-in-sm);
   }
 }
 
@@ -127,6 +146,151 @@ a {
   }
 }
 
+.comment_main {
+  padding: 1rem 3%;
+
+  * {
+    margin: 0;
+  }
+
+  .comment_title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    span {
+      font-size: 1rem;
+      padding: 0.5rem;
+      margin-right: 0.5rem;
+
+      box-shadow: var(--shadow-in-md);
+      border-radius: 1rem;
+    }
+  }
+
+  .comment_input-area {
+    margin: 0;
+    height: 3rem;
+    max-height: 3rem;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    .comment_input-area_input {
+      padding: 0 1rem;
+      margin: 0;
+
+      width: 94%;
+      line-height: 3rem;
+      outline: none;
+
+      border: none;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-in-md);
+      transition: all 0.3s ease;
+
+      &:focus {
+        box-shadow: var(--shadow-in-sm);
+
+        & + .comment_input-area_submitBtn {
+          width: 4rem;
+          height: 2.5rem;
+          padding: 0 0.5rem;
+          margin-left: 1rem;
+          border: var(--border);
+          box-shadow: var(--shadow-out-sm);
+        }
+      }
+    }
+
+    .comment_input-area_submitBtn {
+      margin: 0;
+      padding: 0;
+      width: 0;
+      height: 0;
+      font-size: 0;
+      outline: none;
+      border: none;
+      border: solid 0 var(--border-color);
+      border-radius: 1rem;
+      letter-spacing: 0.7rem;
+      background: var(--bg-main-color);
+
+      transition: all 0.3s ease;
+    }
+  }
+
+  .comment_comment {
+    .comment_input-area {
+      margin: 0.6rem 0;
+      .comment_input-area_input {
+        line-height: 2.5rem;
+
+        &:focus + .comment_input-area_submitBtn {
+          height: 2rem;
+          width: 3.5rem;
+        }
+      }
+    }
+    padding: 1rem;
+    margin: 1rem 0;
+
+    border-radius: 1rem;
+
+    box-shadow: var(--shadow-in-sm);
+
+    .comment_detail {
+      padding: 0 1rem;
+      span {
+        margin-right: 1rem;
+      }
+    }
+
+    .comment_content {
+      margin: 0.7rem 0;
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+
+      border-radius: 1rem;
+      box-shadow: var(--shadow-out-sm);
+    }
+
+    .comment_control-panel {
+      a {
+        margin-right: 0.7rem;
+        padding: 0.3rem 0.5rem;
+        border-radius: 0.5rem;
+
+        span {
+          padding: 0;
+          margin: 0;
+        }
+
+        &:hover {
+          box-shadow: var(--shadow-in-sm);
+        }
+      }
+      .comment_like {
+        span {
+          color: red;
+        }
+      }
+      .comment_toggleBtn,
+      .comment_reply {
+        float: right;
+      }
+    }
+
+    .comment_comment-reply {
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+
+      border-radius: 1rem;
+      box-shadow: var(--shadow-in-sm);
+    }
+  }
+}
+/*	#endregion	*/
+
 /*	#endregion	*/
 
 @media screen and (min-width: 865px) {
@@ -145,20 +309,6 @@ a {
   }
   .navbar_hamburger-btn {
     display: none;
-  }
-
-  .navbar_nav-list,
-  .navbar_sub-nav-list,
-  .navbar_secondary-nav-list,
-  .navbar_hamburger-btn_label,
-  .blog_section,
-  .blog_section_img,
-  .blog-page_content,
-  .carousel_main {
-    background-color: var(--bg-main-color);
-    border-radius: 1rem;
-    border: var(--border);
-    box-shadow: var(--shadow-out-md);
   }
 
   .carousel_container {
@@ -609,6 +759,11 @@ a {
   /*	#region	博客页面 blog-page 凹槽新拟态	*/
   .blog-page_main {
     width: auto;
+  }
+
+  .blog-page_content,
+  .comment_main {
+    border-radius: 0;
   }
   /*	#endregion	*/
 }

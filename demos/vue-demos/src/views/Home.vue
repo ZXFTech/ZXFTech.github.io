@@ -5,7 +5,6 @@
       :key="blogContent.title"
       :blogContent="blogContent"
     ></BlogSection>
-    <Comment :commentList="commentList"></Comment>
   </div>
 </template>
 
@@ -14,7 +13,6 @@
 import { Prop, Component, Vue } from "vue-property-decorator";
 
 import BlogSection from "../components/myBlog/BlogSection.vue";
-import Comment from "../components/myComment/Comment.vue";
 
 import {
   BlogContent,
@@ -26,7 +24,6 @@ import {
 @Component({
   components: {
     BlogSection,
-    Comment,
   },
 })
 export default class Home extends Vue {

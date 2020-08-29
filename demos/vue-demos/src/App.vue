@@ -12,11 +12,9 @@ import { Component, Vue } from "vue-property-decorator";
 import TitleBar from "./components/myTitleBar/TitleBar.vue";
 import NavbarMain from "./components/myNavbar/NavbarMain.vue";
 import Navbar from "./components/myNavbar/Navbar.vue";
-import CommentTree from "./components/myComment/CommentTree.vue";
 
 import { navbarContentList } from "./constant/pageState";
 Vue.component("Navbar", Navbar);
-Vue.component("Comment", CommentTree);
 
 @Component({
   components: {

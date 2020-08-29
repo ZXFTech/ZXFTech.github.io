@@ -1,29 +1,29 @@
 <template>
   <div class="comment_main">
-    <div class="comment_input-area_title">
+    <div class="comment_title">
       <span class="comment_number">{{ commentList.length }}</span>
       评论
     </div>
     <CommentInputArea></CommentInputArea>
-    <CommentTree
+    <CommentMain
       v-for="comment in commentList"
       :key="comment.author"
       :comment="comment"
-    ></CommentTree>
+    ></CommentMain>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
 
-import CommentTree from "./CommentTree.vue";
+import CommentMain from "./CommentMain.vue";
 import CommentInputArea from "./CommentInputArea.vue";
 
 import { BlogComment } from "../../constant/pageState";
 
 @Component({
   components: {
-    CommentTree,
+    CommentMain,
     CommentInputArea,
   },
 })
