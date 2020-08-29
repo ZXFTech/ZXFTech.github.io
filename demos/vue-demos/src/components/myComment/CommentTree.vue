@@ -15,6 +15,9 @@
         v-show="isShow"
         :placeholderText="placeholderText"
       ></CommentInputArea>
+      <div v-if="comment.reply && comment.reply.length" :comment="comment">
+        123
+      </div>
     </div>
   </div>
 </template>
@@ -23,18 +26,16 @@
 import { Component, Vue, Prop } from "vue-property-decorator";
 
 import CommentInputArea from "./CommentInputArea.vue";
-import Comment from "./Comment.vue";
 
 import { BlogComment } from "../../constant/pageState";
 
 @Component({
   components: {
     CommentInputArea,
-    Comment,
   },
 })
 export default class CommentTree extends Vue {
-  @Prop({ default: () => new Object() }) private comment!: BlogComments;
+  @Prop({ default: () => new Object() }) private comment!: BlogComment;
   private isShow = false;
   private showInputArea() {
     this.isShow != this.isShow;

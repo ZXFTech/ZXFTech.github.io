@@ -81,7 +81,7 @@ export interface BlogContent {
   likes: number;
   tags: Array<string>;
   series: string;
-  comments?: Array<BlogComments>;
+  comments?: Array<BlogComment>;
   imgPath?: string;
 }
 

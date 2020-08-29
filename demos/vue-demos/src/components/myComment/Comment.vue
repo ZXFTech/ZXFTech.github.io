@@ -7,7 +7,7 @@
     <CommentInputArea></CommentInputArea>
     <CommentTree
       v-for="comment in commentList"
-      :key="comment"
+      :key="comment.author"
       :comment="comment"
     ></CommentTree>
   </div>
