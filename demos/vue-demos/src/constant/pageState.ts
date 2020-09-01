@@ -70,6 +70,58 @@ export const blogCommentList = [
       },
     ],
   },
+  {
+    author: "feline",
+    date: "2020-04-07",
+    content: "第一条评论测试",
+    likes: 666,
+    reply: [
+      {
+        author: "feline",
+        date: "2020-04-07",
+        content: "第一条回复测试",
+        likes: 666,
+      },
+      {
+        author: "feline",
+        date: "2020-04-07",
+        content: "第二条回复测试",
+        likes: 666,
+      },
+      {
+        author: "feline",
+        date: "2020-04-07",
+        content: "第三条回复测试",
+        likes: 666,
+      },
+    ],
+  },
+  {
+    author: "feline",
+    date: "2020-04-07",
+    content: "第一条评论测试",
+    likes: 666,
+    reply: [
+      {
+        author: "feline",
+        date: "2020-04-07",
+        content: "第一条回复测试",
+        likes: 666,
+      },
+      {
+        author: "feline",
+        date: "2020-04-07",
+        content: "第二条回复测试",
+        likes: 666,
+      },
+      {
+        author: "feline",
+        date: "2020-04-07",
+        content: "第三条回复测试",
+        likes: 666,
+      },
+    ],
+  },
 ];
 
 export interface BlogContent {
@@ -144,3 +196,33 @@ Cum ne denique albucius. Ei nonumy vulputate nam, mea commodo feugait ad. At pri
     imgPath: "blog-img.jpg",
   },
 ];
+
+export interface SocialContact {
+  way: string;
+  url: string;
+}
+
+export interface UserStatus {
+  name: string;
+  imgPath: string;
+  occupation: string;
+  introduction: string;
+  contact: SocialContact[];
+}
+
+export const userStatus: UserStatus = {
+  name: "feline",
+  imgPath: "feline.jpg",
+  occupation: "Front End",
+  introduction: "Hello,world!",
+  contact: [
+    {
+      way: "github",
+      url: "http://zxftech.github.io/",
+    },
+    {
+      way: "QQ",
+      url: "http://zxftech.github.io/",
+    },
+  ],
+};

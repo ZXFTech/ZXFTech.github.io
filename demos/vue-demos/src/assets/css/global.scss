@@ -247,7 +247,7 @@ a {
 
     .comment_content {
       margin: 0.7rem 0;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       padding: 0.5rem 1rem;
 
       border-radius: 1rem;
@@ -291,9 +291,54 @@ a {
 }
 /*	#endregion	*/
 
+/*	#region	个人介绍卡片 profile-card	*/
+
+.profile-card_main {
+  margin: auto;
+  width: 25rem;
+
+  box-shadow: var(--shadow-out-md);
+  border-radius: 1rem;
+
+  .profile-card_avatar {
+    margin: 1rem 1rem;
+    margin-top: -3rem;
+    margin-left: -5rem;
+    padding: 1rem;
+
+    height: 8rem;
+    width: 8rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-in-sm);
+
+    img {
+      border-radius: 0.5rem;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .profile-card_user-detail {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    .profile-card_user-detail_name {
+      font-size: 1.5rem;
+      letter-spacing: 0;
+    }
+  }
+}
+
+/*	#endregion	*/
+
 /*	#endregion	*/
 
 @media screen and (min-width: 865px) {
+  html {
+    font-size: 15px;
+  }
+
   /*	#region	主题通用部分	*/
   .title-bar {
     position: fixed;
