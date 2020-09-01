@@ -8,7 +8,9 @@
     <CommentMain
       v-for="(comment, index) in comments.commentList"
       :key="index"
-      :comment="comment"
+      :comment="comment.comment"
+      :blogId="comments.blogId"
+      :commentId="comment.commentListId"
     ></CommentMain>
   </div>
 </template>

@@ -36,10 +36,14 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { State, Mutation } from "vuex-class";
+
+import { PageState } from "../store/pageState";
+
 import {
   blogContentList,
   BlogContent,
-  blogComments,
+  blogCommentList,
   BlogComment,
   BlogComments,
 } from "../constant/pageState";
@@ -52,8 +56,11 @@ import Comment from "../components/myComment/Comment.vue";
   },
 })
 export default class BlogPage extends Vue {
+  @State("pageState") pageState!: PageState;
+  @Mutation("liked") liked: any;
+
   private blogContent: BlogContent = blogContentList[0];
-  private comments: BlogComments = blogComments;
+  private comments: BlogComments = blogCommentList[0];
 }
 </script>
 

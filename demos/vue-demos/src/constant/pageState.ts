@@ -36,101 +36,180 @@ export const navbarContentList: Array<NavbarContent> = [
 ];
 
 export interface BlogComment {
+  commentId: number;
   author: string;
   date: string;
   content: string;
-  likes: number;
-  reply?: Array<BlogComment>;
+  likes: string[];
+  dislikes: string[];
 }
 
 export interface BlogComments {
   blogId: number;
-  commentList: BlogComment[];
+  commentList: {
+    commentListId: number;
+    comment: BlogComment[];
+  }[];
 }
 
-export const blogComments: BlogComments = {
-  blogId: 0,
-  commentList: [
-    {
-      author: "feline",
-      date: "2020-04-07",
-      content: "第一条评论测试",
-      likes: 666,
-      reply: [
-        {
-          author: "feline",
-          date: "2020-04-07",
-          content: "第一条回复测试",
-          likes: 666,
-        },
-        {
-          author: "feline",
-          date: "2020-04-07",
-          content: "第二条回复测试",
-          likes: 666,
-        },
-        {
-          author: "feline",
-          date: "2020-04-07",
-          content: "第三条回复测试",
-          likes: 666,
-        },
-      ],
-    },
-    {
-      author: "feline",
-      date: "2020-04-07",
-      content: "第一条评论测试",
-      likes: 666,
-      reply: [
-        {
-          author: "feline",
-          date: "2020-04-07",
-          content: "第一条回复测试",
-          likes: 666,
-        },
-        {
-          author: "feline",
-          date: "2020-04-07",
-          content: "第二条回复测试",
-          likes: 666,
-        },
-        {
-          author: "feline",
-          date: "2020-04-07",
-          content: "第三条回复测试",
-          likes: 666,
-        },
-      ],
-    },
-    {
-      author: "feline",
-      date: "2020-04-07",
-      content: "第一条评论测试",
-      likes: 666,
-      reply: [
-        {
-          author: "feline",
-          date: "2020-04-07",
-          content: "第一条回复测试",
-          likes: 666,
-        },
-        {
-          author: "feline",
-          date: "2020-04-07",
-          content: "第二条回复测试",
-          likes: 666,
-        },
-        {
-          author: "feline",
-          date: "2020-04-07",
-          content: "第三条回复测试",
-          likes: 666,
-        },
-      ],
-    },
-  ],
-};
+export const blogCommentList: BlogComments[] = [
+  {
+    blogId: 0,
+    commentList: [
+      {
+        commentListId: 0,
+        comment: [
+          {
+            commentId: 0,
+            author: "feline",
+            date: "2020-04-07",
+            content: "第一条评论测试",
+            likes: [],
+            dislikes: [],
+          },
+          {
+            commentId: 1,
+            author: "feline",
+            date: "2020-04-07",
+            content: "第一条回复测试",
+            likes: [],
+            dislikes: [],
+          },
+          {
+            commentId: 2,
+            author: "feline",
+            date: "2020-04-07",
+            content: "第二条回复测试",
+            likes: [],
+            dislikes: [],
+          },
+          {
+            commentId: 3,
+            author: "feline",
+            date: "2020-04-07",
+            content: "第三条回复测试",
+            likes: [],
+            dislikes: [],
+          },
+        ],
+      },
+      {
+        commentListId: 1,
+        comment: [
+          {
+            commentId: 0,
+            author: "feline",
+            date: "2020-04-07",
+            content: "第一条评论测试",
+            likes: [],
+            dislikes: [],
+          },
+        ],
+      },
+      {
+        commentListId: 2,
+        comment: [
+          {
+            commentId: 0,
+            author: "feline",
+            date: "2020-04-07",
+            content: "第一条评论测试",
+            likes: [],
+            dislikes: [],
+          },
+          {
+            commentId: 1,
+            author: "feline",
+            date: "2020-04-07",
+            content: "第一条回复测试",
+            likes: [],
+            dislikes: [],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    blogId: 1,
+    commentList: [
+      {
+        commentListId: 0,
+        comment: [
+          {
+            commentId: 0,
+            author: "feline",
+            date: "2020-04-07",
+            content: "第一条评论测试",
+            likes: [],
+            dislikes: [],
+          },
+          {
+            commentId: 1,
+            author: "feline",
+            date: "2020-04-07",
+            content: "第一条回复测试",
+            likes: [],
+            dislikes: [],
+          },
+          {
+            commentId: 2,
+            author: "feline",
+            date: "2020-04-07",
+            content: "第二条回复测试",
+            likes: [],
+            dislikes: [],
+          },
+          {
+            commentId: 3,
+            author: "feline",
+            date: "2020-04-07",
+            content: "第三条回复测试",
+            likes: [],
+            dislikes: [],
+          },
+        ],
+      },
+      {
+        commentListId: 1,
+        comment: [
+          {
+            commentId: 0,
+            author: "feline",
+            date: "2020-04-07",
+            content: "第一条评论测试",
+            likes: [],
+            dislikes: [],
+          },
+          {
+            commentId: 1,
+            author: "feline",
+            date: "2020-04-07",
+            content: "第一条回复测试",
+            likes: [],
+            dislikes: [],
+          },
+          {
+            commentId: 2,
+            author: "feline",
+            date: "2020-04-07",
+            content: "第二条回复测试",
+            likes: [],
+            dislikes: [],
+          },
+          {
+            commentId: 3,
+            author: "feline",
+            date: "2020-04-07",
+            content: "第三条回复测试",
+            likes: [],
+            dislikes: [],
+          },
+        ],
+      },
+    ],
+  },
+];
+
 export interface BlogContent {
   blogId: number;
   title: string;
@@ -218,6 +297,7 @@ export interface SocialContact {
 }
 
 export interface UserStatus {
+  userId: number;
   name: string;
   imgPath: string;
   occupation: string;
@@ -226,6 +306,7 @@ export interface UserStatus {
 }
 
 export const userStatus: UserStatus = {
+  userId: 0,
   name: "feline",
   imgPath: "feline.jpg",
   occupation: "Front End",

@@ -14,13 +14,7 @@ import { Prop, Component, Vue } from "vue-property-decorator";
 
 import BlogSection from "../components/myBlog/BlogSection.vue";
 
-import {
-  BlogContent,
-  blogContentList,
-  blogComments,
-  BlogComment,
-  BlogComments,
-} from "../constant/pageState";
+import { BlogContent, blogContentList } from "../constant/pageState";
 
 @Component({
   components: {

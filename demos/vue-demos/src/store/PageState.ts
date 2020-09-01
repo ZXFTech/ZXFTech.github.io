@@ -4,17 +4,17 @@ import {
   blogContentList,
   BlogComments,
   userStatus,
-  blogComments,
+  blogCommentList,
 } from "@/constant/pageState";
 
-export const state: State = {
+export const pageState: PageState = {
   blogList: blogContentList,
-  blogComments: blogComments,
+  blogCommentList: blogCommentList,
   profile: userStatus,
 };
 
-export interface State {
+export interface PageState {
   blogList: BlogContent[];
-  blogComments: BlogComments;
+  blogCommentList: BlogComments[];
   profile: UserStatus;
 }
