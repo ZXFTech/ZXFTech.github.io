@@ -30,7 +30,7 @@
         <span class="fa fa-weixin"></span>
       </a>
     </div>
-    <Comment :commentList="commentList"></Comment>
+    <Comment :comments="comments"></Comment>
   </div>
 </template>
 
@@ -39,8 +39,9 @@ import { Component, Vue } from "vue-property-decorator";
 import {
   blogContentList,
   BlogContent,
-  blogCommentList,
+  blogComments,
   BlogComment,
+  BlogComments,
 } from "../constant/pageState";
 
 import Comment from "../components/myComment/Comment.vue";
@@ -52,7 +53,7 @@ import Comment from "../components/myComment/Comment.vue";
 })
 export default class BlogPage extends Vue {
   private blogContent: BlogContent = blogContentList[0];
-  private commentList: BlogComment[] = blogCommentList;
+  private comments: BlogComments = blogComments;
 }
 </script>
 

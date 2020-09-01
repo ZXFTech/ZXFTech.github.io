@@ -1,13 +1,13 @@
 <template>
   <div class="comment_main">
     <div class="comment_title">
-      <span class="comment_number">{{ commentList.length }}</span>
+      <span class="comment_number">{{ comments.commentList.length }}</span>
       评论
     </div>
     <CommentInputArea></CommentInputArea>
     <CommentMain
-      v-for="comment in commentList"
-      :key="comment.author"
+      v-for="(comment, index) in comments.commentList"
+      :key="index"
       :comment="comment"
     ></CommentMain>
   </div>
@@ -19,7 +19,7 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 import CommentMain from "./CommentMain.vue";
 import CommentInputArea from "./CommentInputArea.vue";
 
-import { BlogComment } from "../../constant/pageState";
+import { BlogComment, BlogComments } from "../../constant/pageState";
 
 @Component({
   components: {
@@ -28,6 +28,6 @@ import { BlogComment } from "../../constant/pageState";
   },
 })
 export default class Comment extends Vue {
-  @Prop({ default: () => [] }) private commentList!: Array<BlogComment>;
+  @Prop({ default: () => new Object() }) private comments!: BlogComments;
 }
 </script>

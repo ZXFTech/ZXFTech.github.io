@@ -17,8 +17,9 @@ import BlogSection from "../components/myBlog/BlogSection.vue";
 import {
   BlogContent,
   blogContentList,
-  blogCommentList,
+  blogComments,
   BlogComment,
+  BlogComments,
 } from "../constant/pageState";
 
 @Component({
@@ -28,6 +29,5 @@ import {
 })
 export default class Home extends Vue {
   private blogList: BlogContent[] = blogContentList;
-  private commentList: BlogComment[] = blogCommentList;
 }
 </script>

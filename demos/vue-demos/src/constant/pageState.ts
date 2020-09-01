@@ -43,94 +43,103 @@ export interface BlogComment {
   reply?: Array<BlogComment>;
 }
 
-export const blogCommentList = [
-  {
-    author: "feline",
-    date: "2020-04-07",
-    content: "第一条评论测试",
-    likes: 666,
-    reply: [
-      {
-        author: "feline",
-        date: "2020-04-07",
-        content: "第一条回复测试",
-        likes: 666,
-      },
-      {
-        author: "feline",
-        date: "2020-04-07",
-        content: "第二条回复测试",
-        likes: 666,
-      },
-      {
-        author: "feline",
-        date: "2020-04-07",
-        content: "第三条回复测试",
-        likes: 666,
-      },
-    ],
-  },
-  {
-    author: "feline",
-    date: "2020-04-07",
-    content: "第一条评论测试",
-    likes: 666,
-    reply: [
-      {
-        author: "feline",
-        date: "2020-04-07",
-        content: "第一条回复测试",
-        likes: 666,
-      },
-      {
-        author: "feline",
-        date: "2020-04-07",
-        content: "第二条回复测试",
-        likes: 666,
-      },
-      {
-        author: "feline",
-        date: "2020-04-07",
-        content: "第三条回复测试",
-        likes: 666,
-      },
-    ],
-  },
-  {
-    author: "feline",
-    date: "2020-04-07",
-    content: "第一条评论测试",
-    likes: 666,
-    reply: [
-      {
-        author: "feline",
-        date: "2020-04-07",
-        content: "第一条回复测试",
-        likes: 666,
-      },
-      {
-        author: "feline",
-        date: "2020-04-07",
-        content: "第二条回复测试",
-        likes: 666,
-      },
-      {
-        author: "feline",
-        date: "2020-04-07",
-        content: "第三条回复测试",
-        likes: 666,
-      },
-    ],
-  },
-];
+export interface BlogComments {
+  blogId: number;
+  commentList: BlogComment[];
+}
 
+export const blogComments: BlogComments = {
+  blogId: 0,
+  commentList: [
+    {
+      author: "feline",
+      date: "2020-04-07",
+      content: "第一条评论测试",
+      likes: 666,
+      reply: [
+        {
+          author: "feline",
+          date: "2020-04-07",
+          content: "第一条回复测试",
+          likes: 666,
+        },
+        {
+          author: "feline",
+          date: "2020-04-07",
+          content: "第二条回复测试",
+          likes: 666,
+        },
+        {
+          author: "feline",
+          date: "2020-04-07",
+          content: "第三条回复测试",
+          likes: 666,
+        },
+      ],
+    },
+    {
+      author: "feline",
+      date: "2020-04-07",
+      content: "第一条评论测试",
+      likes: 666,
+      reply: [
+        {
+          author: "feline",
+          date: "2020-04-07",
+          content: "第一条回复测试",
+          likes: 666,
+        },
+        {
+          author: "feline",
+          date: "2020-04-07",
+          content: "第二条回复测试",
+          likes: 666,
+        },
+        {
+          author: "feline",
+          date: "2020-04-07",
+          content: "第三条回复测试",
+          likes: 666,
+        },
+      ],
+    },
+    {
+      author: "feline",
+      date: "2020-04-07",
+      content: "第一条评论测试",
+      likes: 666,
+      reply: [
+        {
+          author: "feline",
+          date: "2020-04-07",
+          content: "第一条回复测试",
+          likes: 666,
+        },
+        {
+          author: "feline",
+          date: "2020-04-07",
+          content: "第二条回复测试",
+          likes: 666,
+        },
+        {
+          author: "feline",
+          date: "2020-04-07",
+          content: "第三条回复测试",
+          likes: 666,
+        },
+      ],
+    },
+  ],
+};
 export interface BlogContent {
+  blogId: number;
   title: string;
   createDate: string;
   updateDate: string;
   author: string;
   content: string;
-  likes: number;
+  likes: string[];
+  dislikes: string[];
   tags: Array<string>;
   series: string;
   comments?: Array<BlogComment>;
@@ -139,6 +148,7 @@ export interface BlogContent {
 
 export const blogContentList: Array<BlogContent> = [
   {
+    blogId: 0,
     title: "博客题目1",
     createDate: "2020-04-07",
     updateDate: "2020-04-07",
@@ -152,12 +162,14 @@ An per dicam vidisse indoctum, sea ex numquam accusamus, tacimates assueverit in
 Eos singulis necessitatibus ex. Ea pri suscipit inciderint. Usu enim noluisse an, eu his nonumy epicuri insolens. Sonet nonumes efficiantur in pro, eros aperiam mei id, eum persecuti consetetur an. Velit movet nominati vim no, mundi scribentur ullamcorper ad nec.
 
 Cum ne denique albucius. Ei nonumy vulputate nam, mea commodo feugait ad. At pri doming fuisset. Vim ei discere perpetua, possim accusam voluptaria eu vel, cum ex libris gubergren.`,
-    likes: 66,
+    likes: [],
+    dislikes: [],
     tags: ["JavaScript", "vuejs", "css"],
     series: "blog",
     imgPath: "blog-img.jpg",
   },
   {
+    blogId: 1,
     title: "博客题目2",
     createDate: "2020-04-07",
     updateDate: "2020-04-07",
@@ -171,12 +183,14 @@ An per dicam vidisse indoctum, sea ex numquam accusamus, tacimates assueverit in
 Eos singulis necessitatibus ex. Ea pri suscipit inciderint. Usu enim noluisse an, eu his nonumy epicuri insolens. Sonet nonumes efficiantur in pro, eros aperiam mei id, eum persecuti consetetur an. Velit movet nominati vim no, mundi scribentur ullamcorper ad nec.
 
 Cum ne denique albucius. Ei nonumy vulputate nam, mea commodo feugait ad. At pri doming fuisset. Vim ei discere perpetua, possim accusam voluptaria eu vel, cum ex libris gubergren.`,
-    likes: 66,
+    likes: [],
+    dislikes: [],
     tags: ["JavaScript", "vuejs", "css"],
     series: "blog",
     imgPath: "blog-img.jpg",
   },
   {
+    blogId: 2,
     title: "博客题目3",
     createDate: "2020-04-07",
     updateDate: "2020-04-07",
@@ -190,7 +204,8 @@ An per dicam vidisse indoctum, sea ex numquam accusamus, tacimates assueverit in
 Eos singulis necessitatibus ex. Ea pri suscipit inciderint. Usu enim noluisse an, eu his nonumy epicuri insolens. Sonet nonumes efficiantur in pro, eros aperiam mei id, eum persecuti consetetur an. Velit movet nominati vim no, mundi scribentur ullamcorper ad nec.
 
 Cum ne denique albucius. Ei nonumy vulputate nam, mea commodo feugait ad. At pri doming fuisset. Vim ei discere perpetua, possim accusam voluptaria eu vel, cum ex libris gubergren.`,
-    likes: 66,
+    likes: [],
+    dislikes: [],
     tags: ["JavaScript", "vuejs", "css"],
     series: "blog",
     imgPath: "blog-img.jpg",
