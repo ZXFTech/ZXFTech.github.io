@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>防抖和节流</title>
+  <style>
+    .container {
+      margin: 10px auto;
+      width: auto;
+      text-align: center;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      margin: 0;
+      background: #666;
+      text-align: center;
+      line-height: 200px;
+      display: inline-block;
+      user-select: none;
+    }
+
+    #debounceBox,
+    #throttleBox {
+      background: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>按F12在开发者工具中查看</h2>
+  <div class="container">
+    <h3>防抖</h3>
+    <div id="noDebounceBox" class="box">
+      点我
+    </div>
+    <div id="debounceBox" class="box">
+      点我,我加了防抖函数
+    </div>
+  </div>
+  <div class="container">
+    <h3>节流</h3>
+    <div id="noThrottleBox" class="box">
+      点我
+    </div>
+    <div id="throttleBox" class="box">
+      点我，我加了节流函数
+    </div>
+  </div>
+
+</body>
+<script src="./script.js"></script>
+
+</html>
