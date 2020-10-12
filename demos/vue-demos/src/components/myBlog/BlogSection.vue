@@ -34,7 +34,7 @@
 
 <script lang="ts">
 import { Prop, Component, Vue } from "vue-property-decorator";
-import { State, Action, Getter, Mutation } from "vuex-class";
+// import { State, Action, Getter, Mutation } from "vuex-class";
 
 import { PageState } from "../../store/pageState";
 
@@ -44,8 +44,8 @@ import { BlogContent } from "../../constant/pageState";
 export default class BlogSection extends Vue {
   @Prop({ default: () => new Object() }) private blogContent!: BlogContent;
 
-  @State("pageState") pageState!: PageState;
-  @Mutation("liked") liked: any;
+  // @State("pageState") pageState!: PageState;
+  // @Mutation("liked") liked: any;
   private blog: BlogContent = this.blogContent;
   private blogSnaps: string = this.blogContent.content.slice(0, 300);
 }

@@ -20,7 +20,7 @@ function List(props: any) {
         setBlogList(res.data.result);
       })
       .catch((err) => {
-        message.warning(err);
+        message.warning(err.message);
       });
   };
 

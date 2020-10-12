@@ -36,7 +36,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import { State, Mutation } from "vuex-class";
+// import { State, Mutation } from "vuex-class";
 
 import CommentInputArea from "./CommentInputArea.vue";
 import CommentSub from "./CommentSub.vue";
@@ -55,8 +55,8 @@ export default class CommentMain extends Vue {
   @Prop({ default: 0 }) private blogId!: number;
   @Prop({ default: 0 }) private commentListId!: number;
 
-  @State("state") pageState!: PageState;
-  @Mutation("commentLiked") commentLiked: any;
+  // @State("state") pageState!: PageState;
+  // @Mutation("commentLiked") commentLiked: any;
 
   private isShow = false;
   private expand = false;
@@ -69,12 +69,12 @@ export default class CommentMain extends Vue {
     this.expand = !this.expand;
   }
   private handleClick() {
-    this.commentLiked(this.pageState, {
-      blogId: this.blogId,
-      commentListId: this.commentListId,
-      like: true,
-      userId: 0,
-    });
+    // this.commentLiked(this.pageState, {
+    //   blogId: this.blogId,
+    //   commentListId: this.commentListId,
+    //   like: true,
+    //   userId: 0,
+    // });
   }
 }
 </script>
