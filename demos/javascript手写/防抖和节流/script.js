@@ -53,3 +53,46 @@ throttleBox.addEventListener("click", e => {
   const dateNow = date.getHours() + ':' + date.getMinutes() + ":" + date.getSeconds() + ":" + date.getMilliseconds()
   throttleClick(e.target.id + " " + dateNow)
 })
+
+
+const comment = {
+  blogId: '1-1',
+  reply: [
+    {
+      useId: '1',
+      content: '回复1',
+      replys: [
+        {
+          useId: '2',
+          content: '我是1的回复'
+        },
+        {
+          useId: '3',
+          content: '我是1的回复'
+        },
+        {
+          useId: '1',
+          content: '我是1的回复'
+        },
+        {
+          useId: '1',
+          content: '@2 我是回复用户2的1的回复'
+        },
+      ]
+    },
+    {
+      useId: '222',
+      content: '回复222',
+      replys: [
+        {
+          useId: '5',
+          content: '我是222的回复'
+        },
+        {
+          useId: '7',
+          content: '我是222的回复'
+        },
+      ]
+    }
+  ]
+}
