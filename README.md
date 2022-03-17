@@ -6,6 +6,8 @@
 
 _迁移中..._
 
+## JavaScript 代码实现
+
 ## javascript 算法
 
 > [十大排序算法(一)-冒泡排序](<JavascriptAlgorithm/十大排序算法(一)-冒泡排序.md>)  
