@@ -8,17 +8,13 @@ jobs:
   Deploy-Github-Page:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [22.x, 20.x]
-
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: Use Mode.js ${{matrix.node-version}}
+      - name: Use Mode.js 
         uses: actions/setup-node@v3
         with:
-          node-version: ${{matrix.node-version}}
+          node-version: "15"
       - run: npm ci
       - run: npm run build
 
