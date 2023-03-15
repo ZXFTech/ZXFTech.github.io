@@ -22,5 +22,7 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      - name: Upload pages
-        uses: actions/upload-pages-artifact
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
