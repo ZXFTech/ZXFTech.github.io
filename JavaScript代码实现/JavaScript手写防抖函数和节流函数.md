@@ -18,14 +18,14 @@
 // 防抖
 const debounce = (callback, delay) => {
   const timer = Symbol("timer")
-  callback.timer = null
+  callback[timer] = null
   return function () {
     const that = this
-    if (callback.timer) {
-      clearTimeout(callback.timer)
-      callback.timer = null
+    if (callback[timer]) {
+      clearTimeout(callback[timer])
+      callback[timer] = null
     }
-    callback.timer = setTimeout(() => {
+    callback[timer] = setTimeout(() => {
       callback.apply(that, arguments)
     }, delay);
   }
