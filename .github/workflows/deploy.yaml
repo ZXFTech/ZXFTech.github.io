@@ -8,19 +8,15 @@ jobs:
   Deploy-Github-Page:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [16.x, 15.x]
-
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: Use Mode.js ${{matrix.node-version}}
+      - name: Use Mode.js 18
         uses: actions/setup-node@v3
         with:
-          node-version: ${{matrix.node-version}}
+          node-version: "18"
           cache: "npm"
-      - run: npm ci
+      - run: npm i
       - run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v3
