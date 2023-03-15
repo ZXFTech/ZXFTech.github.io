@@ -1,0 +1,26 @@
+name: Github pages
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build: ubuntu-latest
+
+  strategy:
+    matrix:
+      node-version: [22.x, 20.x]
+
+  steps:
+    - name: Check out repository code
+      uses: actions/checkout@v3
+    - name: Use Mode.js ${{matrix.node-version}}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{matrix.node-version}}
+    - name: Install dependencies & build project
+    - run: npm ci
+    - run: npm run build
+
+    - name: Upload pages
+      uses: actions/upload-pages-artifact

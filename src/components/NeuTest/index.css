@@ -1,0 +1,103 @@
+/* Neumorphism configs */
+.test-container {
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  background: #333333;
+  color: white; }
+  .test-container > div {
+    overflow: hidden;
+    display: inline-block;
+    width: 30%;
+    height: 200px;
+    box-sizing: border-box;
+    border: 1px black solid; }
+    .test-container > div > div {
+      overflow: hidden;
+      margin-bottom: 8px; }
+
+.protuberant-container {
+  background: #333333;
+  box-shadow: 8px 8px 8px #141414, -8px -8px 8px #525252;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: 6px;
+  margin-bottom: 14px; }
+
+.sunken-container {
+  background: #333333;
+  box-shadow: inset 8px 8px 8px #141414, inset -8px -8px 8px #525252;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: 14px;
+  margin-bottom: 6px; }
+
+.common-container {
+  background: #333333;
+  box-shadow: none;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.hover-protuberant:hover {
+  background: #333333;
+  box-shadow: 8px 8px 8px #141414, -8px -8px 8px #525252;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: 6px;
+  margin-bottom: 14px; }
+
+.hover-sunken:hover {
+  background: #333333;
+  box-shadow: inset 8px 8px 8px #141414, inset -8px -8px 8px #525252;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: 14px;
+  margin-bottom: 6px; }
+
+.hover-common:hover {
+  background: #333333;
+  box-shadow: none;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.hover-depress:hover {
+  margin: 10px;
+  margin: #333333 linear-gradient(145deg, rgba(0, 0, 0, 0.3), rgba(168, 168, 168, 0.2)); }
+
+.hover-pop:hover {
+  margin: 10px;
+  margin: #333333 linear-gradient(145deg, rgba(168, 168, 168, 0.2), rgba(0, 0, 0, 0.3)); }
+
+.hover-flat:hover {
+  margin: 10px;
+  margin: #333333; }
+
+.convex {
+  margin: 10px;
+  margin: #333333 linear-gradient(145deg, rgba(168, 168, 168, 0.2), rgba(0, 0, 0, 0.3)); }
+
+.flat {
+  margin: 10px;
+  margin: #333333; }
+
+.concave {
+  margin: 10px;
+  margin: #333333 linear-gradient(145deg, rgba(0, 0, 0, 0.3), rgba(168, 168, 168, 0.2)); }
+
+.hover-convex:hover {
+  margin: 10px;
+  margin: #333333 linear-gradient(145deg, rgba(168, 168, 168, 0.2), rgba(0, 0, 0, 0.3)); }
+
+.hover-flat:hover {
+  margin: 10px;
+  margin: #333333; }
+
+.hover-concave:hover {
+  margin: 10px;
+  margin: #333333 linear-gradient(145deg, rgba(0, 0, 0, 0.3), rgba(168, 168, 168, 0.2)); }
+
+/*# sourceMappingURL=index.css.map */

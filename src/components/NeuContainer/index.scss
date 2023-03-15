@@ -1,0 +1,91 @@
+@import "../../../styles/variables.scss";
+
+.test-container {
+  padding: 20px;
+  width: 100%;
+  height: 1000px;
+  text-align: center;
+  background: $neu-main-them-color;
+}
+
+.standardSize {
+  padding: 20px;
+  overflow: hidden;
+  margin: 10px;
+  box-sizing: border-box;
+
+  & > div {
+    overflow: hidden;
+    border-radius: 20px;
+    & > * {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+// 整体
+// 突起
+.protuberant {
+  @include protuberant;
+}
+// 塌陷
+.sunken {
+  @include sunken;
+}
+// 常规
+.common {
+  @include common;
+}
+
+// hover 突起
+.hover-protuberant:hover {
+  @include protuberant;
+}
+// hover 塌陷
+.hover-sunken:hover {
+  @include sunken;
+}
+// hover 常规
+.hover-common:hover {
+  @include common;
+}
+
+// hover 平面 凹陷
+.hover-depress:hover {
+  @include concave;
+}
+// hover 平面 突出
+.hover-pop:hover {
+  @include convex;
+}
+// hover 平面 平面
+.hover-flat:hover {
+  @include flat;
+}
+
+// 表面突起
+.convex {
+  @include convex;
+}
+// 表面平坦
+.flat {
+  @include flat;
+}
+// 表面凹下
+.concave {
+  @include concave;
+}
+
+// hover 表面突起
+.hover-convex:hover {
+  @include convex;
+}
+// hover 表面平坦
+.hover-flat:hover {
+  @include flat;
+}
+// hover 表面凹下
+.hover-concave:hover {
+  @include concave;
+}

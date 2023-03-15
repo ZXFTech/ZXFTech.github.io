@@ -1,13 +1,3 @@
 {
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-  "cSpell.words": [
-    "BLOGADD",
-    "BLOGDELETE",
-    "BLOGDETAIL",
-    "BLOGLIST",
-    "BLOGUPDATE",
-    "Braft",
-    "nums"
-  ]
+  "cSpell.words": ["antd", "blablablablablablablabla"]
 }

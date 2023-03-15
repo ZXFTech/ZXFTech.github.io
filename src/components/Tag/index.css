@@ -1,0 +1,11 @@
+/* Neumorphism configs */
+.tag {
+  display: inline-block;
+  vertical-align: text-bottom;
+  font-size: 14px;
+  padding: 4px 14px;
+  margin: 0 10px 0 0;
+  box-shadow: 4px 4px 4px #141414, -4px -4px 4px #525252;
+  transition: all 0.2s; }
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,109 @@
+/* Neumorphism configs */
+
+// 新拟态主题色
+$neu-main-them-color-value: 51;
+$neu-main-them-color: rgba(
+  $neu-main-them-color-value,
+  $neu-main-them-color-value,
+  $neu-main-them-color-value,
+  1
+);
+// 字体颜色
+$neu-main-font-color: rgba(255, 255, 255, 1);
+$neu-error-font-color: rgba(255, 0, 0, 1);
+
+// 亮色
+$neu-light-color: #525252;
+// 暗色
+$neu-dark-color: #141414;
+// 阴影亮色
+$neu-linear-light-color: rgba(168, 168, 168, 0.2);
+$neu-linear-dark-color: rgba(0, 0, 0, 0.3);
+// 边框亮色
+$neu-border-light-color: rgba(255, 255, 255, 0.5);
+// 边框暗色
+$neu-border-dark-color: rgba(0, 0, 0, 0.5);
+// 亮色边框
+$neu-light-border: 1px $neu-border-light-color solid;
+// 暗色边框
+$neu-dark-border: 1px $neu-border-dark-color solid;
+
+// 渐变角度
+$neu-linear-degree: 145deg;
+// 阴影配置
+$neu-blur: 8px;
+// 边框圆角
+$neu-radio: 10px;
+// margin
+$neu-margin: 10px;
+
+$neu-flat-surface-color: $neu-main-them-color;
+// 凹面渐变
+$neu-concave-surface-color: $neu-main-them-color
+  linear-gradient(
+    $neu-linear-degree,
+    $neu-linear-dark-color,
+    $neu-linear-light-color
+  );
+// 凸面渐变
+$neu-convex-surface-color: $neu-main-them-color
+  linear-gradient(
+    $neu-linear-degree,
+    $neu-linear-light-color,
+    $neu-linear-dark-color
+  );
+
+//
+$neu-convex-container: $neu-blur $neu-blur $neu-blur $neu-dark-color,
+  0-$neu-blur 0-$neu-blur $neu-blur $neu-light-color;
+
+$neu-sunken-container: inset $neu-blur $neu-blur $neu-blur $neu-dark-color,
+  inset 0-$neu-blur 0-$neu-blur $neu-blur $neu-light-color;
+
+// 表面 凹陷 concave
+@mixin concave {
+  margin: $neu-margin;
+  margin: $neu-concave-surface-color;
+}
+
+// 表面 突出 convex
+@mixin convex {
+  margin: $neu-margin;
+  margin: $neu-convex-surface-color;
+}
+
+// 表面 平坦 flat
+@mixin flat {
+  margin: $neu-margin;
+  margin: $neu-main-them-color;
+}
+
+// 塌陷 sunken
+@mixin sunken {
+  background: $neu-main-them-color;
+  box-shadow: $neu-sunken-container;
+  border-radius: $neu-radio;
+  margin: $neu-margin;
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+
+// 突起 protuberant
+@mixin protuberant {
+  background: $neu-main-them-color;
+  box-shadow: $neu-convex-container;
+  border-radius: $neu-radio;
+  margin: $neu-margin;
+  margin-top: 6px;
+  margin-bottom: 14px;
+}
+
+// 常规 common
+@mixin common {
+  background: $neu-main-them-color;
+  box-shadow: none;
+  border-radius: $neu-radio;
+  margin: $neu-margin;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

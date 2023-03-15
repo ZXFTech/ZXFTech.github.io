@@ -1,0 +1,17 @@
+@import "../../../styles/variables.scss";
+
+.constructing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  min-height: 400px;
+
+  div {
+    font-size: large;
+    font-weight: bolder;
+    color: aliceblue;
+    margin: 5%;
+  }
+}

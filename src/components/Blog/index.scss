@@ -1,0 +1,95 @@
+$neu-padding-left: 12px;
+
+.blog-title {
+  text-align: center;
+  letter-spacing: 5px;
+  margin: 0px;
+}
+
+.blog-tags {
+  text-align: center;
+}
+
+.blog-info {
+  font-size: 12px;
+  margin: $neu-padding-left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > div {
+    margin-right: $neu-padding-left;
+  }
+}
+
+.blog-content {
+  padding: 0 12px;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 2px;
+}
+
+// 博客列表
+.list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 2%;
+  border-top: none;
+  border-bottom: none;
+}
+
+.blog-breviary {
+  padding: 12px 0;
+  border: 1px rgba(168, 168, 168, 0.3) solid;
+  cursor: pointer;
+
+  & > * {
+    margin: 0 20px 14px 20px;
+  }
+
+  .breviary-title {
+    letter-spacing: 5px;
+  }
+
+  .breviary-author-date {
+    font-size: 12px;
+    line-height: 12px;
+
+    .breviary-date {
+      float: right;
+    }
+  }
+
+  .breviary-tags {
+    margin-bottom: 14px;
+  }
+
+  .breviary-content {
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 24px;
+    height: 120px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .blog-breviary {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 730px) and (max-width: 2000px) {
+  .blog-breviary {
+    width: 47%;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .blog-breviary {
+    width: 31%;
+  }
+}

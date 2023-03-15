@@ -1,0 +1,44 @@
+/* Neumorphism configs */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #333333;
+  color: white; }
+
+/* Neumorphism configs */
+.main-container {
+  position: relative;
+  height: 100vh; }
+
+.left-bar,
+.right-bar {
+  box-sizing: border-box;
+  width: 500px;
+  position: fixed; }
+
+.left-bar {
+  left: 0; }
+
+.right-bar {
+  right: 0; }
+
+.content-bar {
+  margin-left: 500px;
+  margin-right: 500px; }
+
+@media screen and (max-width: 1000px) {
+  .left-bar,
+  .right-bar {
+    display: none; }
+
+  .content-bar {
+    margin: 0; } }
+@media screen and (min-width: 1000px) and (max-width: 2000px) {
+  .right-bar {
+    display: none; }
+
+  .content-bar {
+    margin-right: 0; } }
+
+/*# sourceMappingURL=App.css.map */

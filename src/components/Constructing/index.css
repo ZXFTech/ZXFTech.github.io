@@ -1,0 +1,14 @@
+/* Neumorphism configs */
+.constructing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 400px; }
+  .constructing-container div {
+    font-size: large;
+    font-weight: bolder;
+    color: aliceblue;
+    margin: 5%; }
+
+/*# sourceMappingURL=index.css.map */

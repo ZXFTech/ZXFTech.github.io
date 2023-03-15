@@ -1,0 +1,78 @@
+@import "../../../styles/variables.scss";
+
+.pagination-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  .page-number,
+  .page-prev,
+  .page-next,
+  .page-letter,
+  .page-input {
+    margin-left: 0px;
+    margin-right: 8px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 24px;
+    height: 24px;
+    cursor: pointer;
+    box-shadow: 6px 6px 8px $neu-dark-color, 0-6px 0-6px 8px $neu-light-color;
+    transition: all 0.2s;
+    word-break: keep-all;
+    word-wrap: normal;
+  }
+
+  .page-number,
+  .page-prev,
+  .page-next,
+  .page-letter {
+    &:hover {
+      background: $neu-main-them-color;
+      box-shadow: 4px 4px 10px $neu-dark-color,
+        0-4px 0-4px 10px $neu-light-color;
+      border-radius: $neu-radio;
+      margin-right: 8px;
+      margin-top: 8px;
+      margin-bottom: 12px;
+    }
+  }
+
+  .page-prev,
+  .page-next,
+  .page-letter,
+  .page-input {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .page-number {
+    min-width: 24px;
+  }
+
+  .page-input {
+    // text-align: center;
+    // font-size: 12px;
+    // line-height: 24px;
+    // height: 24px;
+    // cursor: pointer;
+    // box-shadow: 6px 6px 8px $neu-dark-color, 0-6px 0-6px 8px $neu-light-color;
+    // transition: all 0.2s;
+
+    & > input {
+      display: inline;
+      width: 25px;
+      height: 15px;
+      margin-left: 6px;
+      padding-right: 4px;
+      border-radius: 4px;
+      font-size: 10px;
+      line-height: 10px;
+      text-align: right;
+    }
+
+    &:hover {
+      box-shadow: 6px 6px 8px $neu-dark-color, 0-6px 0-6px 8px $neu-light-color;
+    }
+  }
+}

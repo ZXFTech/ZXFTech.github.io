@@ -1,0 +1,117 @@
+/* Neumorphism configs */
+/* cube-box loading START */
+.outer-box {
+  width: 100px;
+  height: 100px;
+  outline: 1px solid transparent;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: cube-box-ani 2s infinite normal linear; }
+
+.large-box {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  animation: large-box-ani 1s alternate infinite linear; }
+
+.small-box {
+  border-radius: 50%;
+  background-color: black;
+  margin: 0 5px;
+  width: 45px;
+  height: 45px;
+  z-index: 1;
+  animation: small-box-ani 1s alternate infinite linear; }
+
+@keyframes cube-box-ani {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+@keyframes large-box-ani {
+  from {
+    transform: scale(0.6); }
+  to {
+    transform: scale(1); } }
+@keyframes small-box-ani {
+  from {
+    transform: scale(0.6); }
+  to {
+    transform: scale(1); } }
+/* cube-box loading END */
+.loading-container {
+  position: relative;
+  background-color: rgba(51, 51, 51, 0); }
+  .loading-container .mask {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.8);
+    transition: 0.8s all linear; }
+    .loading-container .mask .flex-center {
+      position: relative;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      background: #333333;
+      margin: 10px;
+      margin-top: 6px;
+      margin-bottom: 14px;
+      padding: 1px;
+      box-shadow: none;
+      background-color: rgba(51, 51, 51, 0);
+      transition: 0.618s all ease; }
+      .loading-container .mask .flex-center .ring {
+        border-radius: 50%;
+        border: 6px rgba(51, 51, 51, 0) solid;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1px;
+        background-color: rgba(51, 51, 51, 0);
+        transition: 0.618s all ease;
+        animation: spin 2s infinite linear; }
+      .loading-container .mask .flex-center .inner-ring {
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 10%;
+        height: 80%;
+        width: 80%;
+        box-sizing: border-box;
+        box-shadow: none;
+        background-color: rgba(51, 51, 51, 0);
+        transition: 0.618s all ease; }
+      .loading-container .mask .flex-center .ring-shadow {
+        border: 6px #333333 solid;
+        border-top: 6px white solid;
+        transition: 0.3 all ease; }
+      .loading-container .mask .flex-center .inner-ring-shadow {
+        box-shadow: 4px 4px 4px inset #141414, -4px -4px 4px inset #525252;
+        background-color: rgba(51, 51, 51, 0.4);
+        transition: 0.3 all ease; }
+    .loading-container .mask .flex-center-shadow {
+      box-shadow: 4px 4px 4px #141414, -4px -4px 4px #525252;
+      transition: 0.3 all ease; }
+  .loading-container .container-hidden {
+    transition: none;
+    display: none; }
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg); } }
+
+/*# sourceMappingURL=index.css.map */

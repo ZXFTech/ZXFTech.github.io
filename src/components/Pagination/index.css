@@ -1,0 +1,53 @@
+/* Neumorphism configs */
+.pagination-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; }
+  .pagination-container .page-number,
+  .pagination-container .page-prev,
+  .pagination-container .page-next,
+  .pagination-container .page-letter,
+  .pagination-container .page-input {
+    margin-left: 0px;
+    margin-right: 8px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 24px;
+    height: 24px;
+    cursor: pointer;
+    box-shadow: 6px 6px 8px #141414, -6px -6px 8px #525252;
+    transition: all 0.2s;
+    word-break: keep-all;
+    word-wrap: normal; }
+  .pagination-container .page-number:hover,
+  .pagination-container .page-prev:hover,
+  .pagination-container .page-next:hover,
+  .pagination-container .page-letter:hover {
+    background: #333333;
+    box-shadow: 4px 4px 10px #141414, -4px -4px 10px #525252;
+    border-radius: 10px;
+    margin-right: 8px;
+    margin-top: 8px;
+    margin-bottom: 12px; }
+  .pagination-container .page-prev,
+  .pagination-container .page-next,
+  .pagination-container .page-letter,
+  .pagination-container .page-input {
+    padding-left: 14px;
+    padding-right: 14px; }
+  .pagination-container .page-number {
+    min-width: 24px; }
+  .pagination-container .page-input > input {
+    display: inline;
+    width: 25px;
+    height: 15px;
+    margin-left: 6px;
+    padding-right: 4px;
+    border-radius: 4px;
+    font-size: 10px;
+    line-height: 10px;
+    text-align: right; }
+  .pagination-container .page-input:hover {
+    box-shadow: 6px 6px 8px #141414, -6px -6px 8px #525252; }
+
+/*# sourceMappingURL=index.css.map */

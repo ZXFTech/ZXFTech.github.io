@@ -1,0 +1,9 @@
+@import "./variables.scss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: $neu-main-them-color;
+  color: $neu-main-font-color;
+}

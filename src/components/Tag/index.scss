@@ -1,0 +1,11 @@
+@import "../../../styles/variables.scss";
+
+.tag {
+  display: inline-block;
+  vertical-align: text-bottom;
+  font-size: 14px;
+  padding: 4px 14px;
+  margin: 0 10px 0 0;
+  box-shadow: 4px 4px 4px $neu-dark-color, 0-4px 0-4px 4px $neu-light-color;
+  transition: all 0.2s;
+}
