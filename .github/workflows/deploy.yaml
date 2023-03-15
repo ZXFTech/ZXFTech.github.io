@@ -4,6 +4,11 @@ on:
   push:
     branches: [feature/page-deploy]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   Deploy-Github-Page:
     runs-on: ubuntu-latest
